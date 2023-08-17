@@ -1,11 +1,9 @@
 /* ==UserStyle==
 @name Rose Pine Aniworld
-@namespace github.com/artilate/youtube
-@homepageURL https://github.com/artilate/youtube
-@version 1.3.1
+@namespace https://github.com/DrWuzi/aniworld-theme
+@version 1.0.0
 
-@updateURL https://github.com/artilate/youtube/raw/main/RosePineYoutube.user.css
-@description Soho vibes for YouTube
+@updateURL https://github.com/DrWuzi/aniworld-theme/raw/main/RosePineAniworld.user.css
 @author drwuzi
 @license GNU-V3.0
 
@@ -17,7 +15,7 @@
 	"Rose-Pine-Dawn",
 ]
 
-@var select mainColorDark "Custom Dark accent color" [
+@var select mainColor "Custom accent color" [
 	"Love",
 	"Gold",
 	"Rose",
@@ -26,108 +24,627 @@
 	"Iris",
 ]
 
-@var select mainColorDawn "Custom Dawn accent color" [
-	"Love",
-	"Gold",
-	"Rose",
-	"Pine",
-	"Foam",
-	"Iris",
-]
-@var checkbox join-color "Use dark join button" 0
+@var checkbox logo-color "Invert Logo" 0
 @var checkbox subscribe-color "Use dark subscribe button" 0
 
 @var text scrollbar_width "Scrollbar width" 8px
 @var color scrollbar_track "Scrollbar background" "rgba(0,0,0, 0)"
 
 ==/UserStyle== */
+@-moz-document url-prefix("https://aniworld.to/") {
+    :root {
+        --logo-invertation: 0;
+        --logo-hue-rotation: 0deg;
+        if stylus-deepdark-style=="Rose-Pine" {
+            if mainColor=="Love" {
+                --main-color: #eb6f92;
+                --logo-hue-rotation: 100deg;
+            }
+            else if mainColor=="Gold" {
+                --main-color: #f6c177;
+                --logo-hue-rotation: -192deg;
+            }
+            else if mainColor=="Rose" {
+                --main-color: #ebbcba;
+                --logo-hue-rotation: 118deg;
+            }
+            else if mainColor=="Pine" {
+                --main-color: #31748f;
+                --logo-hue-rotation: -30deg;
+            }
+            else if mainColor=="Foam" {
+                --main-color: #9ccfd8;
+                --logo-hue-rotation: 12deg;
+            }
+            else if mainColor=="Iris" {
+                --main-color: #c4a7e7;
+                --logo-hue-rotation: 35deg;
+            }
 
-@-moz-document url("https://aniworld.to/") {
-	:root
-	{
-		if stylus-deepdark-style == "Rose-Pine" {
-			if mainColorDark == "Love" {
-				--main-color: #eb6f92;
-			}
-			else if mainColorDark == "Gold" {
-				--main-color: #f6c177;
-			}
-			else if mainColorDark == "Rose" {
-				--main-color: #ebbcba;
-			}
-			else if mainColorDark == "Pine" {
-				--main-color: #31748f;
-			}
-			else if mainColorDark == "Foam" {
-				--main-color: #9ccfd8;
-			}
-			else if mainColorDark == "Iris" {
-				--main-color: #c4a7e7;
-			}
-			--main-background: #191724;
-			--second-background: #191724;
-			--hover-background: #26233a;
-			--main-text: #e0def4;
-			--dimmer-text: #908caa;
-			--shadow: 0 1px 0.5px rgb(0, 0, 0, .13)
-		}
-		else if stylus-deepdark-style == "Rose-Pine-Moon" {
-			if mainColorDark == "Love" {
-				--main-color: #eb6f92;
-			}
-			else if mainColorDark == "Gold" {
-				--main-color: #f6c177;
-			}
-			else if mainColorDark == "Rose" {
-				--main-color: #ebbcba;
-			}
-			else if mainColorDark == "Pine" {
-				--main-color: #31748f;
-			}
-			else if mainColorDark == "Foam" {
-				--main-color: #9ccfd8;
-			}
-			else if mainColorDark == "Iris" {
-				--main-color: #c4a7e7;
-			}
-			--main-background: #232136;
-			--second-background: #2a273f;
-			--hover-background: #393552;
-			--main-text: #e0def4;
-			--dimmer-text: #908caa;
-			--shadow: 0 1px 0.5px rgba(0, 0, 0, .13)
-		}
-		else if stylus-deepdark-style == "Rose-Pine-Dawn" {
-			if mainColorDawn == "Love" {
-				--main-color: #b4637a;
-			}
-			else if mainColorDawn == "Gold" {
-				--main-color: #ea9d34;
-			}
-			else if mainColorDawn == "Rose" {
-				--main-color: #d7827e;
-			}
-			else if mainColorDawn == "Pine" {
-				--main-color: #286983;
-			}
-			else if mainColorDawn == "Foam" {
-				--main-color: #56949f;
-			}
-			else if mainColorDawn == "Iris" {
-				--main-color: #907aa9;
-			}
-			--main-background: #faf4ed;
-			--second-background: #fffaf3;
-			--hover-background: #f2e9de;
-			--main-text: #575279;
-			--dimmer-text: #797593;
-			--shadow: 0 1px 0.5px rgba(0, 0, 0, .13)
-		}
+            --base: #191724;
+            --surface: #1f1d2e;
+            --overlay: #393552;
+            --muted: #6e6a86;
+            --subtle: #908caa;
+            --text: #e0def4;
+
+            --highlight-low: #21202e;
+            --highlight-med: #403d52;
+            --highlight-high: #524f67;
+        }
+        else if stylus-deepdark-style=="Rose-Pine-Moon" {
+            if mainColor=="Love" {
+                --main-color: #eb6f92;
+                --logo-hue-rotation: 100deg;
+            }
+            else if mainColor=="Gold" {
+                --main-color: #f6c177;
+                --logo-hue-rotation: -192deg;
+            }
+            else if mainColor=="Rose" {
+                --main-color: #ebbcba;
+                --logo-hue-rotation: 118deg;
+            }
+            else if mainColor=="Pine" {
+                --main-color: #31748f;
+                --logo-hue-rotation: -30deg;
+            }
+            else if mainColor=="Foam" {
+                --main-color: #9ccfd8;
+                --logo-hue-rotation: 12deg;
+            }
+            else if mainColor=="Iris" {
+                --main-color: #c4a7e7;
+                --logo-hue-rotation: 35deg;
+            }
+
+            --base: #232136;
+            --surface: #2a273f;
+            --overlay: #393552;
+            --muted: #6e6a86;
+            --subtle: #908caa;
+            --text: #e0def4;
+
+            --highlight-low: #2a283e;
+            --highlight-med: #44415a;
+            --highlight-high: #56526e;
+        }
+        else if stylus-deepdark-style=="Rose-Pine-Dawn" {
+            --logo-invertation: 100;
+            if mainColor=="Love" {
+                --main-color: #b4637a;
+                --logo-hue-rotation: -80deg;
+            }
+            else if mainColor=="Gold" {
+                --main-color: #ea9d34;
+                --logo-hue-rotation: 325deg;
+            }
+            else if mainColor=="Rose" {
+                --main-color: #d7827e;
+                --logo-hue-rotation: -60deg;
+            }
+            else if mainColor=="Pine" {
+                --main-color: #286983;
+                --logo-hue-rotation: 175deg;
+            }
+            else if mainColor=="Foam" {
+                --main-color: #56949f;
+                --logo-hue-rotation: 145deg;
+            }
+            else if mainColor=="Iris" {
+                --main-color: #907aa9;
+                --logo-hue-rotation: -170deg;
+            }
+
+            --base: #faf4ed;
+            --surface: #fffaf3;
+            --overlay: #f2e9e1;
+            --muted: #9893a5;
+            --subtle: #797593;
+            --text: #575279;
+
+            --highlight-low: #f4ede8;
+            --highlight-med: #dfdad9;
+            --highlight-high: #cecacd;
+        }
+        --small-border-radius: 3px;
+        --big-border-radius: 12px;
+    }
+
+    #error-page {
+        background-color: var(--base) !important;
+        color: var(--text) !important;
+    }
+
+    * {
+        scrollbar-color: var(--main-color) scrollbar_track !important;
+        scrollbar-width: thin !important;
+        color: var(--text) !important;
+    }
+
+    /*Scrollbar fix for chrome*/
+    *:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: var(--main-color) !important;
+    }
+    *:not([hide-scrollbar]) ::-webkit-scrollbar {
+        width: scrollbar_width !important;
+        background: var(--surface)
+    }
+    /*Scrollbar fix for firefox*/
+    ::-webkit-scrollbar-track {
+        background: scrollbar_track !important;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: var(--main-color) !important;
+    }
+
+    /* static elements */
+    .header-logo {
+        filter: invert(var(--logo-invertation)) hue-rotate(var(--logo-hue-rotation));
+    }
+
+    #wrapper,
+    .liveNewsFeedSectionHeader,
+    .liveNewsFeedSection > span > a,
+    .header-container nav .user .modal ul li .icon-container {
+        background-color: var(--base);
+    }
+
+    .main-header,
+    .header-content,
+    .logo-wrapper,
+    .footer-container,
+    #footer {
+        background: var(--surface);
+    }
+
+    .user.offset-navigation > div > div > i:hover::before {
+        color: var(--highlight-high) !important;
     }
     
-	#error-page
-	{
-		background-color: var(--main-background) !important;
-		color: var(--main-text) !important;
-	}    
+    .modal {
+        display: none;
+    }
+
+    /* Show the modal when hovering over the dropdown */
+    .user.offset-navigation > .dd:hover .modal {
+        display: block !important;
+    }
+    .user.offset-navigation > .dd .modal:hover {
+        display: block !important;
+    }
+
+    /* Animation to hide the modal after 3 seconds of inactivity */
+    .modal {
+        animation: hideModal 3s forwards;
+    }
+
+    @keyframes hideModal {
+        100% {
+            display: none;
+        }
+    }
+    
+    .liveNewsFeedButton i:hover{
+        animation: wiggle 0.3s ease-in-out alternate;
+    }
+
+    @keyframes wiggle {
+        0% {
+            transform: rotate(-10deg);
+        }
+        33% {
+            transform: rotate(10deg);
+        }
+        66% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg);
+        }
+    }
+
+    .liveNewsFeedSection,
+    .header-container nav .user .modal {
+        background: var(--overlay);
+    }
+    .liveNewsFeedSection::before,
+    .header-container nav .user .modal::before {
+        display: none;
+    }
+
+    .header-container nav .user .modal ul li:last-child .item {
+        padding-bottom: 0;
+    }
+    .header-container nav .user .modal ul li:hover {
+        border-radius: var(--small-border-radius);
+        background: var(--highlight-low);
+    }
+    .header-container nav .user .modal ul li:hover a span {
+        color: var(--main-color) !important;
+    }
+    .primary-navigation > ul > li > strong {
+        background: var(--overlay);
+        border-radius: var(--small-border-radius);
+    }
+    .primary-navigation > ul > li > strong:hover {
+        background: var(--highlight-med) !important;
+        color: var(--main-color) !important;
+        fill: var(--main-color) !important;
+    }
+    .primary-navigation > ul > li > ul > li {
+        background: var(--overlay);
+    }
+    .primary-navigation > ul > li > ul > li:hover {
+        background: var(--highlight-low);
+    }
+
+    /*Outline for links*/
+    a {
+        outline-color: var(--main-color) !important;
+    }
+
+    a:hover,
+    a strong:hover,
+    a span:hover,
+    i::before,
+    button:hover,
+    .showMore:hover
+    {
+        color: var(--main-color) !important;
+        fill: var(--main-color) !important;
+    }
+
+    .seriesListHorizontalContent i {
+        background: none;
+        transition: transform 0.3s ease;
+        transform-origin: center center;
+    }
+    .seriesListHorizontalContent p,
+    .seriesListHorizontalContent br {
+        display: none;
+    }
+    .seriesListHorizontalCover,
+    .seriesListHorizontalContent {
+        border-radius: var(--big-border-radius);
+    }
+    .seriesListHorizontalContent i:hover{
+        animation: spinAndEnlarge 1.2s forwards;
+    }
+    @keyframes spinAndEnlarge {
+        0% {
+            transform: scale(1) rotate(0deg);
+        }
+        25% {
+            transform: scale(1.2) rotate(45deg);
+        }
+        75% {
+            transform: scale(1.2) rotate(400deg);
+        }
+        100% {
+            transform: scale(1) rotate(360deg);
+        }
+    }
+
+    .button.blue {
+        background: var(--overlay);
+    }
+    .button.blue:hover {
+        background: var(--main-color);
+    }
+    
+    a h3 span{
+        display: none;
+    }
+    
+    .allSeriesBox{
+        border-radius: var(--big-border-radius)
+        background: var(--overlay) !important;
+    }
+    .allSeriesBox .preBox{
+        -webkit-animation: none !important;
+    }
+    
+    .catalogNav li {
+        background: var(--overlay);
+        border-radius: var(--small-border-radius);
+    }
+    .catalogNav li a:hover {
+        color: var(--main-color) !important;
+        background: var(--highlight-low);
+        border-radius: var(--small-border-radius);
+    }
+    
+    .homeContentGenresList li a{
+        background: var(--overlay) !important;
+        border-radius: var(--big-border-radius) !important;
+    }
+    .homeContentGenresList li a:hover {
+        color: var(--main-color) !important;
+        background: var(--highlight-low) !important;
+    }
+    
+    .seriesGenreList, .seriesListNavigation{
+        background: var(--overlay);
+        border-radius: var(--small-border-radius);
+    }
+    
+    .fullBackgroundSize{
+        background: var(--overlay)
+    }
+    #search{
+        border-bottom: 4px solid var(--main-color);
+    }
+    #searchResults li a{
+        background: var(--surface)
+        border-radius: var(--big-border-radius)
+        box-shadow: none;
+        -webkit-transition: box-shadow 200ms ease-in;
+    }
+    #searchResults li:hover a{
+        background: var(--highlight-med)
+        border-radius: var(--big-border-radius)
+    }
+    
+    .seriesListContainer div a img{
+        border-radius: var(--big-border-radius);
+    }
+}
+
+@-moz-document url("https://aniworld.to/") {
+
+    .homeContentPromotionBox > .homeSliderView .col-md-3,
+    .registerNowButton {
+        background: none;
+    }
+    .homeContentPromotionBox > .homeSliderView .col-md-3 a > .homeContentPromotionBoxPicture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .coverListNavigation span {
+        background-color: var(--overlay);
+        border-radius: var(--big-border-radius);
+    }
+    .coverListNavigation span:hover {
+        background-color: var(--highlight-low);
+    }
+
+    .newEpisodeList {
+        background-color: var(--surface);
+        border-radius: var(--small-border-radius);
+    }
+    .newEpisodeList .row .col-md-12:hover a strong, .newEpisodeList .row .col-md-12:hover a .elementFloatRight, .newEpisodeList .row .col-md-12:hover a .elementFloatRight span{
+        color: var(--main-color) !important;
+    }
+
+    .listTag.blue {
+        border-color: var(--highlight-high);
+    }
+    .listTag.blue1 {
+        border-color: var(--subtle);
+    }
+    .listTag.blue2 {
+        border-color: var(--main-color);
+    }
+    .listTag.green {
+        border-color: var(--highlight-high);
+    }
+    .listTag.grey {
+        border-color: var(--muted);
+    }
+
+    .animNewsBox a {
+        border-top: var(--small-border-radius) solid var(--highlight-high);
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px
+    }
+    .animNewsBox a:hover {
+        border-top: calc(var(--small-border-radius) * 2) solid var(--main-color);
+    }
+
+    .tvSeriesCalendarContent {
+        background: var(--surface);
+    }
+    .tvSeriesCalendarNavigation {
+        background: var(--overlay);
+        border-radius: var(--big-border-radius);
+    }
+    .tvSeriesCalendarNavigation ul li.ui-tabs-active {
+        background: var(--main-color);
+    }
+    .tvSeriesCalendarNavigation ul li:hover {
+        background: var(--highlight-low);
+    }
+    .tvSeriesCalendarNavigation .active {
+        background: var(--highlight-high);
+    }
+    .tvSeriesCalendarNavigation a.button.blue {
+        background: var(--highlight-low);
+        border-radius: var(--big-border-radius);
+        border-bottom: none;
+        margin: 12px 0 12px 12px;
+    }
+    .tvSeriesCalendarNavigation a.button.blue:hover {
+        background: var(--main-color);
+        border-radius: var(--big-border-radius);
+        border-bottom: none;
+    }
+
+    .homepageSupportFAQList,
+    .supportFAQArticle,
+    .supportFAQArticleAnswer {
+        background: var(--surface);
+        border-radius: var(--big-border-radius);
+    }
+
+    .shoutboxHeader {
+        background: var(--overlay) !important;
+        border-top-left-radius: var(--big-border-radius);
+        border-top-right-radius: var(--big-border-radius);
+    }
+    .shoutbox {
+        bottom: 5px;
+        right: 5px;
+        box-shadow: none;
+        border-radius: var(--big-border-radius);
+        background: var(--surface);
+    }
+    .shoutboxBodyForm {
+        background: var(--overlay) !important;
+    }
+    .shoutboxIcons {
+        height: 50px;
+    }
+}
+
+@-moz-document url-prefix("https://aniworld.to/anime/stream/"){
+    #series .title .picture img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--big-border-radius);
+    }
+    #series .title{
+        background: var(--overlay)
+        border-bottom: 1px solid var(--main-color);
+    }
+    #series .title .series-meta .series-title .fsk, .imdb-link{
+        border: 3px solid var(--overlay);
+        background: var(--overlay);
+    }
+    .imdb-link:hover{
+        border: 3px solid var(--highlight-high);
+        background: var(--highlight-high);
+    }
+    .genreButton.clearbutton, #series .title .series-meta .genres .hiddenArea{
+        background: var(--surface);
+        border-radius: var(--small-border-radius);
+        border: 0px;
+    }
+    .genreButton.clearbutton:hover, #series .title .series-meta .genres .hiddenArea:hover{
+        background: var(--highlight-high);
+        border-radius: var(--small-border-radius);
+        border: 0px;
+    }
+    .seriesCoverBox{
+        background: none;
+    }
+    .add-series .add-series-button{
+        background: var(--surface)
+    }
+    .collections{
+        background: var(--overlay) !important;
+    }
+    .add-series .collections li{
+        border: none;
+    }
+    .add-series .collections li.buttonAction:hover{
+        background: var(--highlight-high) !important;
+    }
+    .collections .col-md-12.col-sm-12.col-xs-6 iframe{
+        display:none;
+    }
+    .starRatingResult, .starRatingResult span{
+        font-size: 12px;
+        background: var(--surface);
+        color: var(--text) !important;
+    }
+    .rating-control .rating-option .ratingIcon svg path.base{
+        fill: var(--highlight-high) !important;
+    }
+    .rating-control .current-rating .svg-wrapper svg path.base{
+        fill: var(--main-color) !important;
+    }
+    .add-series .collections li:last-child{
+        border-bottom: none;
+    }
+    
+    .normalDropdown span{
+        background: var(--overlay);
+    }
+    .normalDropdownButton{
+        border-radius: var(--small-border-radius);
+        border: 2px solid var(--main-color);
+    }
+    .normalDropdownButton:hover, .normalDropdownButton[data-active-status="1"]{
+        background: var(--highlight-high)
+    }
+    .normalDropdown span:hover{
+        background: var(--highlight-med)
+    }
+    .normalDropdown{
+        border-left: 2px solid var(--main-color);
+        border-right: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-radius: var(--small-border-radius);
+    }
+    
+    .hosterSiteDirectNav ul li span{
+        background: var(--highlight-high);
+    }
+    .hosterSiteDirectNav ul li a{
+        background: var(--highlight-med);
+        color: var(--muted) !important;
+    }
+    .hosterSiteDirectNav ul li span strong{
+        color: var(--text) !important;
+    }
+    
+    .seasonEpisodesList>thead>tr>th:first-child{
+        border-top-left-radius: var(--big-border-radius) !important;
+    }
+    .seasonEpisodesList>thead>tr>th:last-child{
+        border-top-right-radius: var(--big-border-radius) !important;
+    }
+    .seasonEpisodesList>thead>tr{
+        background: var(--surface) !important;
+    }
+    .seasonEpisodesList>tbody>tr{
+        background: var(--overlay) !important;
+    }
+    .seasonEpisodesList>tbody>tr.seen, .hosterSiteDirectNav ul li .seen{
+        background: var(--muted) !important;
+    }
+    .seasonEpisodesList>tbody>tr.seen:hover, .hosterSiteDirectNav>ul>li a.seen:hover{
+        background: var(--subtle) !important;
+    }
+    .seasonEpisodesList>tbody>tr:hover, .hosterSiteDirectNav>ul>li a:hover{
+        background: var(--surface) !important;
+    }
+    .hosterSiteDirectNav ul li .active{
+        color: var(--main-color) !important;
+        background-color: var(--highlight-low) !important;
+    }
+    
+    .hosterSectionTitle{
+        visibility: hidden;
+    }
+    .hosterSiteVideo{
+        background: var(--surface)
+    }
+    .changeLanguageBox, .hosterSiteVideo ul li>div{
+        border-radius: var(--small-border-radius);
+        border: none;
+        background: var(--overlay);
+    }
+    .changeLanguageBox .selectedLanguage{
+        border: 3px solid var(--main-color);
+    }
+    #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13){
+        display: none;
+    }
+    .seasonListBig li a .SeasonListBigPicture img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--big-border-radius);
+    }
+    .SeasonListBigContent{
+        border-radius: var(--big-border-radius);
+    }
 }
