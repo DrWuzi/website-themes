@@ -203,22 +203,16 @@
     .user.offset-navigation > div > div > i:hover::before {
         color: var(--highlight-high) !important;
     }
-    
+
     .modal {
         display: none;
+        animation: hideModal 3s forwards;
     }
 
     /* Show the modal when hovering over the dropdown */
-    .user.offset-navigation > .dd:hover .modal {
-        display: block !important;
-    }
+    .user.offset-navigation > .dd:hover .modal,
     .user.offset-navigation > .dd .modal:hover {
         display: block !important;
-    }
-
-    /* Animation to hide the modal after 3 seconds of inactivity */
-    .modal {
-        animation: hideModal 3s forwards;
     }
 
     @keyframes hideModal {
@@ -226,8 +220,8 @@
             display: none;
         }
     }
-    
-    .liveNewsFeedButton i:hover{
+
+    .liveNewsFeedButton i:hover {
         animation: wiggle 0.3s ease-in-out alternate;
     }
 
@@ -259,15 +253,15 @@
         padding-bottom: 0;
     }
     .header-container nav .user .modal ul li:hover {
-        border-radius: var(--small-border-radius);
-        background: var(--highlight-low);
+        border-radius: var(--small-border-radius) !important;
+        background: var(--highlight-low) !important;
     }
     .header-container nav .user .modal ul li:hover a span {
         color: var(--main-color) !important;
     }
     .primary-navigation > ul > li > strong {
-        background: var(--overlay);
-        border-radius: var(--small-border-radius);
+        background: var(--overlay) !important;
+        border-radius: var(--small-border-radius) !important;
     }
     .primary-navigation > ul > li > strong:hover {
         background: var(--highlight-med) !important;
@@ -278,7 +272,7 @@
         background: var(--overlay);
     }
     .primary-navigation > ul > li > ul > li:hover {
-        background: var(--highlight-low);
+        background: var(--highlight-low) !important;
     }
 
     /*Outline for links*/
@@ -291,8 +285,7 @@
     a span:hover,
     i::before,
     button:hover,
-    .showMore:hover
-    {
+    .showMore:hover {
         color: var(--main-color) !important;
         fill: var(--main-color) !important;
     }
@@ -303,14 +296,15 @@
         transform-origin: center center;
     }
     .seriesListHorizontalContent p,
-    .seriesListHorizontalContent br {
+    .seriesListHorizontalContent br,
+    a h3 span {
         display: none;
     }
     .seriesListHorizontalCover,
     .seriesListHorizontalContent {
-        border-radius: var(--big-border-radius);
+        border-radius: var(--big-border-radius) !important;
     }
-    .seriesListHorizontalContent i:hover{
+    .seriesListHorizontalContent i:hover {
         animation: spinAndEnlarge 1.2s forwards;
     }
     @keyframes spinAndEnlarge {
@@ -328,99 +322,173 @@
         }
     }
 
-    .button.blue {
-        background: var(--overlay);
-    }
-    .button.blue:hover {
-        background: var(--main-color);
-    }
-    
-    a h3 span{
-        display: none;
-    }
-    
-    .allSeriesBox{
-        border-radius: var(--big-border-radius)
+    .button.blue,
+    .fullBackgroundSize {
         background: var(--overlay) !important;
     }
-    .allSeriesBox .preBox{
+    .button.blue:hover {
+        background: var(--main-color) !important;
+    }
+    .allSeriesBox,
+    .homeContentGenresList li a {
+        border-radius: var(--big-border-radius) !important;
+        background: var(--overlay) !important;
+    }
+    .allSeriesBox .preBox {
         -webkit-animation: none !important;
     }
-    
-    .catalogNav li {
-        background: var(--overlay);
-        border-radius: var(--small-border-radius);
+    .catalogNav li,
+    .seriesGenreList,
+    .seriesListNavigation {
+        background: var(--overlay) !important;
+        border-radius: var(--small-border-radius) !important;
     }
     .catalogNav li a:hover {
         color: var(--main-color) !important;
-        background: var(--highlight-low);
-        border-radius: var(--small-border-radius);
-    }
-    
-    .homeContentGenresList li a{
-        background: var(--overlay) !important;
-        border-radius: var(--big-border-radius) !important;
+        background: var(--highlight-low) !important;
+        border-radius: var(--small-border-radius) !important;
     }
     .homeContentGenresList li a:hover {
         color: var(--main-color) !important;
         background: var(--highlight-low) !important;
     }
-    
-    .seriesGenreList, .seriesListNavigation{
-        background: var(--overlay);
-        border-radius: var(--small-border-radius);
+    #search {
+        border-bottom: 4px solid var(--main-color) !important;
     }
-    
-    .fullBackgroundSize{
-        background: var(--overlay)
-    }
-    #search{
-        border-bottom: 4px solid var(--main-color);
-    }
-    #searchResults li a{
-        background: var(--surface)
-        border-radius: var(--big-border-radius)
+    #searchResults li a {
+        background: var(--surface) !important;
+        border-radius: var(--big-border-radius) !important;
         box-shadow: none;
         -webkit-transition: box-shadow 200ms ease-in;
     }
-    #searchResults li:hover a{
-        background: var(--highlight-med)
-        border-radius: var(--big-border-radius)
+    #searchResults li:hover a {
+        background: var(--highlight-med) !important;
+        border-radius: var(--big-border-radius) !important;
+    }
+
+    .seriesListContainer div a img {
+        border-radius: var(--big-border-radius) !important;
+    }
+    .homeContentPromotionBox > .homeSliderView .col-md-3 a > .homeContentPromotionBoxPicture img,
+    #series .title .picture img,
+    .seasonListBig li a .SeasonListBigPicture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--big-border-radius) !important;
+    }
+    .randomFormHeader {
+        background: var(--base)
+    }
+
+    .homeContentGenresList li[data-selected=true] div {
+        color: var(--main-color);
+        background: var(--subtle) !important;
+    }
+    .homeContentGenresList li div {
+        background: var(--surface) !important;
+        border-radius: var(--small-border-radius);
+    }
+    .homeContentGenresList li div:hover {
+        background: var(--highlight-high) !important;
+    }
+    .homeContentGenresList li div:hover[title] {
+        color: var(--main-color) !important;
+    }
+    .randomFormContent {
+        background: var(--overlay);
+        box-shadow: none !important;
+    }
+    .randomFormBackground {
+        background: var(--surface);
+    }
+    .col-md-3 select {
+        border-color: var(--main-color) !important;
+    }
+    .col-md-3 select option {
+        background: var(--surface) !important;
+    }
+    .col-md-3 select option:hover {
+        background: var(--highlight-med) !important;
+    }
+    .randomButtons > ul li a {
+        background: var(--overlay);
+        border: none;
+    }
+    .randomButtons > ul li a:hover {
+        background: var(--highlight-high) !important;
+    }
+    .randomButtons > ul li.ui-tabs-active.ui-state-active a {
+        background: var(--main-color);
+    }
+    .dropdown .searchcontainer {
+        background: var(--surface)
+    }
+    .dropdown .itemcontainer {
+        background: var(--overlay)
+    }
+    .tinyselect .itemcontainer > li.selected {
+        background: var(--highlight-high) !important;
+    }
+    .tinyselect .itemcontainer > li:hover {
+        background: var(--highlight-med) !important;
+    }
+    .selectbox {
+        border-color: var(--main-color) !important;
+    }
+    .selectbox::after {
+        color: var(--main-color) !important;
+        background: var(--surface) !important;
+    }
+    .icheckbox_square-blue {
+        border-radius: var(--small-border-radius);
+    }
+    .icheckbox_square-blue.checked {
+        background: var(--main-color) !important;
+    }
+    .icheckbox_square-blue.hover {
+        background: none;
+        border: 2px solid var(--main-color);
+    }
+    .welcomeMessage{
+        background: var(--surface);
+    }
+    .brandButtonSectionCenter a{
+        border-color: var(--main-color);
+    }
+    .brandButtonSectionCenter a:hover{
+        background: var(--overlay)
+        border-color: var(--main-color);
+    }
+    .accountFeatures{
+        background: var(--base)
     }
     
-    .seriesListContainer div a img{
-        border-radius: var(--big-border-radius);
+    .supportSearchForm > input {
+        background: var(--base);
+        padding: 24px 15px 20px 24px;
     }
 }
 
 @-moz-document url("https://aniworld.to/") {
-
     .homeContentPromotionBox > .homeSliderView .col-md-3,
     .registerNowButton {
         background: none;
     }
-    .homeContentPromotionBox > .homeSliderView .col-md-3 a > .homeContentPromotionBoxPicture img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .coverListNavigation span,
+    .tvSeriesCalendarNavigation {
+        background: var(--overlay) !important;
+        border-radius: var(--big-border-radius) !important;
     }
-
-    .coverListNavigation span {
-        background-color: var(--overlay);
-        border-radius: var(--big-border-radius);
-    }
-    .coverListNavigation span:hover {
-        background-color: var(--highlight-low);
-    }
-
     .newEpisodeList {
-        background-color: var(--surface);
-        border-radius: var(--small-border-radius);
+        background: var(--surface) !important;
+        border-radius: var(--small-border-radius) !important;
     }
-    .newEpisodeList .row .col-md-12:hover a strong, .newEpisodeList .row .col-md-12:hover a .elementFloatRight, .newEpisodeList .row .col-md-12:hover a .elementFloatRight span{
+    .newEpisodeList .row .col-md-12:hover a strong,
+    .newEpisodeList .row .col-md-12:hover a .elementFloatRight,
+    .newEpisodeList .row .col-md-12:hover a .elementFloatRight span {
         color: var(--main-color) !important;
     }
-
     .listTag.blue {
         border-color: var(--highlight-high);
     }
@@ -436,7 +504,6 @@
     .listTag.grey {
         border-color: var(--muted);
     }
-
     .animNewsBox a {
         border-top: var(--small-border-radius) solid var(--highlight-high);
         margin-left: 5px;
@@ -446,19 +513,15 @@
     .animNewsBox a:hover {
         border-top: calc(var(--small-border-radius) * 2) solid var(--main-color);
     }
-
     .tvSeriesCalendarContent {
         background: var(--surface);
-    }
-    .tvSeriesCalendarNavigation {
-        background: var(--overlay);
-        border-radius: var(--big-border-radius);
     }
     .tvSeriesCalendarNavigation ul li.ui-tabs-active {
         background: var(--main-color);
     }
-    .tvSeriesCalendarNavigation ul li:hover {
-        background: var(--highlight-low);
+    .tvSeriesCalendarNavigation ul li:hover,
+    .coverListNavigation span:hover {
+        background: var(--highlight-low) !important;
     }
     .tvSeriesCalendarNavigation .active {
         background: var(--highlight-high);
@@ -474,7 +537,6 @@
         border-radius: var(--big-border-radius);
         border-bottom: none;
     }
-
     .homepageSupportFAQList,
     .supportFAQArticle,
     .supportFAQArticleAnswer {
@@ -502,149 +564,134 @@
     }
 }
 
-@-moz-document url-prefix("https://aniworld.to/anime/stream/"){
-    #series .title .picture img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: var(--big-border-radius);
-    }
-    #series .title{
-        background: var(--overlay)
+@-moz-document url-prefix("https://aniworld.to/anime/stream/") {
+    #series .title {
+        background: var(--overlay);
         border-bottom: 1px solid var(--main-color);
     }
-    #series .title .series-meta .series-title .fsk, .imdb-link{
+    #series .title .series-meta .series-title .fsk,
+    .imdb-link {
         border: 3px solid var(--overlay);
         background: var(--overlay);
     }
-    .imdb-link:hover{
+    .imdb-link:hover {
         border: 3px solid var(--highlight-high);
         background: var(--highlight-high);
     }
-    .genreButton.clearbutton, #series .title .series-meta .genres .hiddenArea{
+    .genreButton.clearbutton,
+    #series .title .series-meta .genres .hiddenArea {
         background: var(--surface);
         border-radius: var(--small-border-radius);
         border: 0px;
     }
-    .genreButton.clearbutton:hover, #series .title .series-meta .genres .hiddenArea:hover{
+    .genreButton.clearbutton:hover,
+    #series .title .series-meta .genres .hiddenArea:hover {
         background: var(--highlight-high);
         border-radius: var(--small-border-radius);
         border: 0px;
     }
-    .seriesCoverBox{
+    .seriesCoverBox {
         background: none;
     }
-    .add-series .add-series-button{
-        background: var(--surface)
-    }
-    .collections{
-        background: var(--overlay) !important;
-    }
-    .add-series .collections li{
+    .add-series .collections li {
         border: none;
     }
-    .add-series .collections li.buttonAction:hover{
+    .add-series .collections li.buttonAction:hover {
         background: var(--highlight-high) !important;
     }
-    .collections .col-md-12.col-sm-12.col-xs-6 iframe{
-        display:none;
-    }
-    .starRatingResult, .starRatingResult span{
+    .starRatingResult,
+    .starRatingResult span {
         font-size: 12px;
         background: var(--surface);
         color: var(--text) !important;
     }
-    .rating-control .rating-option .ratingIcon svg path.base{
+    .rating-control .rating-option .ratingIcon svg path.base {
         fill: var(--highlight-high) !important;
     }
-    .rating-control .current-rating .svg-wrapper svg path.base{
+    .rating-control .current-rating .svg-wrapper svg path.base {
         fill: var(--main-color) !important;
     }
-    .add-series .collections li:last-child{
-        border-bottom: none;
+    .add-series .collections li:last-child {
+        border-bottom: none !important;
     }
-    
-    .normalDropdown span{
-        background: var(--overlay);
+
+    .normalDropdownButton {
+        border-radius: var(--small-border-radius) !important;
+        border: 2px solid var(--main-color) !important;
     }
-    .normalDropdownButton{
-        border-radius: var(--small-border-radius);
-        border: 2px solid var(--main-color);
-    }
-    .normalDropdownButton:hover, .normalDropdownButton[data-active-status="1"]{
+    .normalDropdownButton:hover,
+    .normalDropdownButton[data-active-status="1"],
+    .hosterSiteDirectNav ul li span {
         background: var(--highlight-high)
     }
-    .normalDropdown span:hover{
+    .normalDropdown span:hover {
         background: var(--highlight-med)
     }
-    .normalDropdown{
+    .normalDropdown {
         border-left: 2px solid var(--main-color);
         border-right: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
         border-radius: var(--small-border-radius);
     }
-    
-    .hosterSiteDirectNav ul li span{
-        background: var(--highlight-high);
-    }
-    .hosterSiteDirectNav ul li a{
+
+    .hosterSiteDirectNav ul li a {
         background: var(--highlight-med);
         color: var(--muted) !important;
     }
-    .hosterSiteDirectNav ul li span strong{
+    .hosterSiteDirectNav ul li span strong {
         color: var(--text) !important;
     }
-    
-    .seasonEpisodesList>thead>tr>th:first-child{
+
+    .seasonEpisodesList > thead > tr > th:first-child {
         border-top-left-radius: var(--big-border-radius) !important;
     }
-    .seasonEpisodesList>thead>tr>th:last-child{
+    .seasonEpisodesList > thead > tr > th:last-child {
         border-top-right-radius: var(--big-border-radius) !important;
     }
-    .seasonEpisodesList>thead>tr{
+    .seasonEpisodesList > thead > tr,
+    .seasonEpisodesList > tbody > tr:hover,
+    .hosterSiteDirectNav > ul > li a:hover,
+    .add-series .add-series-button,
+    .hosterSiteVideo {
         background: var(--surface) !important;
     }
-    .seasonEpisodesList>tbody>tr{
+    .seasonEpisodesList > tbody > tr,
+    .collections,
+    .normalDropdown span {
         background: var(--overlay) !important;
     }
-    .seasonEpisodesList>tbody>tr.seen, .hosterSiteDirectNav ul li .seen{
+    .seasonEpisodesList > tbody > tr.seen,
+    .hosterSiteDirectNav ul li .seen {
         background: var(--muted) !important;
     }
-    .seasonEpisodesList>tbody>tr.seen:hover, .hosterSiteDirectNav>ul>li a.seen:hover{
+    .seasonEpisodesList > tbody > tr.seen:hover,
+    .hosterSiteDirectNav > ul > li a.seen:hover {
         background: var(--subtle) !important;
     }
-    .seasonEpisodesList>tbody>tr:hover, .hosterSiteDirectNav>ul>li a:hover{
-        background: var(--surface) !important;
-    }
-    .hosterSiteDirectNav ul li .active{
+
+    .hosterSiteDirectNav ul li .active {
         color: var(--main-color) !important;
         background-color: var(--highlight-low) !important;
     }
-    
-    .hosterSectionTitle{
+
+    .hosterSectionTitle {
         visibility: hidden;
     }
-    .hosterSiteVideo{
-        background: var(--surface)
-    }
-    .changeLanguageBox, .hosterSiteVideo ul li>div{
+
+    .changeLanguageBox,
+    .hosterSiteVideo ul li > div {
         border-radius: var(--small-border-radius);
         border: none;
         background: var(--overlay);
     }
-    .changeLanguageBox .selectedLanguage{
+    .changeLanguageBox .selectedLanguage {
         border: 3px solid var(--main-color);
     }
-    #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13){
+    #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13),
+    .collections .col-md-12.col-sm-12.col-xs-6 iframe {
         display: none;
     }
-    .seasonListBig li a .SeasonListBigPicture img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: var(--big-border-radius);
-    }
-    .SeasonListBigContent{
+    .SeasonListBigContent {
         border-radius: var(--big-border-radius);
     }
 }
