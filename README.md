@@ -13,7 +13,7 @@
 
 | Rosé Pine | Rosé Pine Moon | Rosé Pine Dawn |
 |---|---|---|
-|![Rosé Pine](assets/rosepine/rosepine.png)|![Rosé Pine Moon](assets/rosepine/moon.png)|![Rosé Pine Dawn](assets/rosepine/dawn.png)|
+|![Rosé Pine](assets/rosepine/rosepine.png)|![Moon](assets/rosepine/moon.png)|![Dawn](assets/rosepine/dawn.png)|
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="80" align="right"/>
 <h1 align="left">Catppuccin for AniWorld</h1>
