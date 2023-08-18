@@ -6,7 +6,7 @@
 
 1. Install Stylus extension on your browser. [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/)
 2. In the main manager interface on the extension, check the box `as Usercss`.
-3. Download and install the theme [here](https://github.com/DrWuzi/aniworld-theme/blob/main/RosePineAniworld.user.css).
+3. Download and install the theme [here](https://github.com/DrWuzi/aniworld-theme/raw/main/RosePineAniworld.user.css).
 
 ## Gallery
 
@@ -21,7 +21,7 @@
 
 1. Install Stylus extension on your browser. [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/)
 2. In the main manager interface on the extension, check the box `as Usercss`.
-3. Download and install the theme [here](https://github.com/DrWuzi/aniworld-theme/blob/main/CatppuccinAniworld.user.css).
+3. Download and install the theme [here](https://github.com/DrWuzi/aniworld-theme/raw/main/CatppuccinAniworld.user.css).
 
 | Latte | Frappe | Macchiato | Mocha |
 |---|---|---|---|
