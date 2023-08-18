@@ -6,7 +6,7 @@
 
 1. Install Stylus extension on your browser. [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/)
 2. In the main manager interface on the extension, check the box `as Usercss`.
-3. Download the theme [here](https://github.com/DrWuzi/aniworld-theme/blob/main/RosePineYoutube.user.css).
+3. Download the theme [here](https://github.com/DrWuzi/aniworld-theme/blob/main/RosePineAniworld.user.css).
 4. Click install style.
 
 
