@@ -13,9 +13,8 @@
 
 | Rosé Pine | Rosé Pine Moon | Rosé Pine Dawn |
 |---|---|---|
-|![Rosé Pine](assets/rosepine.png)|![Rosé Pine](assets/rosepine-moon.png)|![Rosé Pine](assets/rosepine-dawn.png)|
+|![Rosé Pine](assets/rosepine/rosepine.png)|![Rosé Pine Moon](assets/rosepine/moon.png)|![Rosé Pine Dawn](assets/rosepine/dawn.png)|
 
-#
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="80" align="right"/>
 <h1 align="left">Catppuccin for AniWorld</h1>
 
@@ -26,7 +25,9 @@
 3. Download the theme [here](https://github.com/DrWuzi/aniworld-theme/blob/main/CatppuccinAniworld.user.css).
 4. Click install style.
 
-
+| Latte | Frappe | Macchiato | Mocha |
+|---|---|---|---|
+|![Latte](assets/catppuccin/latte.png)|![Frappe](assets/catppuccin/frappe.png)|![Macchiato](assets/catppuccin/macchiato.png)|![Mocha](assets/catppuccin/mocha.png)|
 
 A theme for aniworld.to using rose pine theme (rosepinetheme.com)
 
