@@ -28,6 +28,7 @@
 |![Latte](assets/catppuccin/latte.png)|![Frappe](assets/catppuccin/frappe.png)|![Macchiato](assets/catppuccin/macchiato.png)|![Mocha](assets/catppuccin/mocha.png)|
 
 
-A themes for aniworld.to using rose pine(https://rosepinetheme.com/) & catppuccin(https://catppuccin.com/)
 
-I am not supporting or using this services in any way, I just designed a Theme for it!
+These themes using rose pine(https://rosepinetheme.com/) & catppuccin(https://catppuccin.com/)
+
+### I am not supporting or using this service in any way, I just uploaded a Theme for it!
