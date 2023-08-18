@@ -1,0 +1,447 @@
+/* ==UserStyle==
+@name Catppuccin Theme Aniworld
+@namespace https://github.com/DrWuzi/aniworld-theme
+@version 1.0.0
+
+@updateURL https://github.com/DrWuzi/aniworld-theme/raw/main/
+@author drwuzi
+@license GNU-V3.0
+
+@preprocessor stylus
+
+@var select stylus-style "Themes" [
+    "Latte",
+    "Frappe",
+    "Macchiato",
+	"Mocha",
+]
+
+@var select accentColor "Accent color" [
+	"Rosewater",
+	"Flamingo",
+    "Pink",
+	"Mauve",
+    "Red",
+	"Maroon",
+    "Peach",
+	"Yellow",
+    "Green",
+    "Teal",
+    "Sky",
+    "Sapphire",
+    "Blue",
+    "Lavender",
+]
+
+@var text scrollbar_width "Scrollbar width" 8px
+@var color scrollbar_track "Scrollbar background" "rgba(0,0,0, 0)"
+
+==/UserStyle== */
+@-moz-document domain("aniworld.to") {
+
+    :root {
+        if stylus-style=="Latte" {
+            if accentColor=="Rosewater" {
+                --ctp-accent-color: #dc8a78;
+            }
+            else if accentColor=="Flamingo" {
+                --ctp-accent-color: #dd7878;
+            }
+            else if accentColor=="Pink" {
+                --ctp-accent-color: #ea76cb;
+            }
+            else if accentColor=="Mauve" {
+                --ctp-accent-color: #8839ef;
+            }
+            else if accentColor=="Red" {
+                --ctp-accent-color: #d20f39;
+            }
+            else if accentColor=="Maroon" {
+                --ctp-accent-color: #e64553;
+            }
+            else if accentColor=="Peach" {
+                --ctp-accent-color: #fe640b;
+            }
+            else if accentColor=="Yellow" {
+                --ctp-accent-color: #df8e1d;
+            }
+            else if accentColor=="Green" {
+                --ctp-accent-color: #40a02b;
+            }
+            else if accentColor=="Teal" {
+                --ctp-accent-color: #179299;
+            }
+            else if accentColor=="Sky" {
+                --ctp-accent-color: #04a5e5;
+            }
+            else if accentColor=="Sapphire" {
+                --ctp-accent-color: #209fb5;
+            }
+            else if accentColor=="Blue" {
+                --ctp-accent-color: #1e66f5;
+            }
+            else if accentColor=="Lavender" {
+                --ctp-accent-color: #7287fd;
+            }
+            
+            --ctp-text: #4c4f69;
+            --ctp-subtext1: #5c5f77;
+            --ctp-subtext0: #6c6f85;
+            --ctp-overlay2: #7c7f93;
+            --ctp-overlay1: #8c8fa1;
+            --ctp-surface2: #acb0be;
+            --ctp-surface1: #bcc0cc;
+            --ctp-overlay0: #9ca0b0;
+            --ctp-surface0: #ccd0da;
+            --ctp-base: #eff1f5;
+            --ctp-mantle: #e6e9ef;
+            --ctp-crust: #dce0e8;
+        }
+        else if stylus-style=="Frappe" {
+            if accentColor=="Rosewater" {
+                --ctp-accent-color: #f2d5cf;
+            }
+            else if accentColor=="Flamingo" {
+                --ctp-accent-color: #eebebe;
+            }
+            else if accentColor=="Pink" {
+                --ctp-accent-color: #f4b8e4;
+            }
+            else if accentColor=="Mauve" {
+                --ctp-accent-color: #ca9ee6;
+            }
+            else if accentColor=="Red" {
+                --ctp-accent-color: #e78284;
+            }
+            else if accentColor=="Maroon" {
+                --ctp-accent-color: #ea999c;
+            }
+            else if accentColor=="Peach" {
+                --ctp-accent-color: #ef9f76;
+            }
+            else if accentColor=="Yellow" {
+                --ctp-accent-color: #e5c890;
+            }
+            else if accentColor=="Green" {
+                --ctp-accent-color: #a6d189;
+            }
+            else if accentColor=="Teal" {
+                --ctp-accent-color: #81c8be;
+            }
+            else if accentColor=="Sky" {
+                --ctp-accent-color: #99d1db;
+            }
+            else if accentColor=="Sapphire" {
+                --ctp-accent-color: #85c1dc;
+            }
+            else if accentColor=="Blue" {
+                --ctp-accent-color: #8caaee;
+            }
+            else if accentColor=="Lavender" {
+                --ctp-accent-color: #babbf1;
+            }
+
+            --ctp-text: #c6d0f5;
+            --ctp-subtext1: #b5bfe2;
+            --ctp-subtext0: #a5adce;
+            --ctp-overlay2: #949cbb;
+            --ctp-overlay1: #838ba7;
+            --ctp-surface2: #626880;
+            --ctp-overlay0: #737994;
+            --ctp-surface1: #51576d;
+            --ctp-surface0: #414559;
+            --ctp-base: #303446;
+            --ctp-mantle: #292c3c;
+            --ctp-crust: #232634;
+        }
+        else if stylus-style=="Macchiato" {
+            if accentColor=="Rosewater" {
+                --ctp-accent-color: #f4dbd6;
+            }
+            else if accentColor=="Flamingo" {
+                --ctp-accent-color: #f0c6c6;
+            }
+            else if accentColor=="Pink" {
+                --ctp-accent-color: #f5bde6;
+            }
+            else if accentColor=="Mauve" {
+                --ctp-accent-color: #c6a0f6;
+            }
+            else if accentColor=="Red" {
+                --ctp-accent-color: #ed8796;
+            }
+            else if accentColor=="Maroon" {
+                --ctp-accent-color: #ee99a0;
+            }
+            else if accentColor=="Peach" {
+                --ctp-accent-color: #f5a97f;
+            }
+            else if accentColor=="Yellow" {
+                --ctp-accent-color: #eed49f;
+            }
+            else if accentColor=="Green" {
+                --ctp-accent-color: #a6da95;
+            }
+            else if accentColor=="Teal" {
+                --ctp-accent-color: #8bd5ca;
+            }
+            else if accentColor=="Sky" {
+                --ctp-accent-color: #91d7e3;
+            }
+            else if accentColor=="Sapphire" {
+                --ctp-accent-color: #7dc4e4;
+            }
+            else if accentColor=="Blue" {
+                --ctp-accent-color: #8aadf4;
+            }
+            else if accentColor=="Lavender" {
+                --ctp-accent-color: #b7bdf8;
+            }
+
+            --ctp-text: #cad3f5;
+            --ctp-subtext1: #b8c0e0;
+            --ctp-subtext0: #a5adcb;
+            --ctp-overlay2: #939ab7;
+            --ctp-overlay1: #8087a2;
+            --ctp-overlay0: #6e738d;
+            --ctp-surface2: #5b6078;
+            --ctp-surface1: #494d64;
+            --ctp-surface0: #363a4f;
+            --ctp-base: #24273a;
+            --ctp-mantle: #1e2030;
+            --ctp-crust: #181926;
+        }
+        else if stylus-style=="Mocha" {
+            if accentColor=="Rosewater" {
+                --ctp-accent-color: #f5e0dc;
+            }
+            else if accentColor=="Flamingo" {
+                --ctp-accent-color: #f2cdcd;
+            }
+            else if accentColor=="Pink" {
+                --ctp-accent-color: #f5c2e7;
+            }
+            else if accentColor=="Mauve" {
+                --ctp-accent-color: #cba6f7;
+            }
+            else if accentColor=="Red" {
+                --ctp-accent-color: #f38ba8;
+            }
+            else if accentColor=="Maroon" {
+                --ctp-accent-color: #eba0ac;
+            }
+            else if accentColor=="Peach" {
+                --ctp-accent-color: #fab387;
+            }
+            else if accentColor=="Yellow" {
+                --ctp-accent-color: #f9e2af;
+            }
+            else if accentColor=="Green" {
+                --ctp-accent-color: #a6e3a1;
+            }
+            else if accentColor=="Teal" {
+                --ctp-accent-color: #94e2d5;
+            }
+            else if accentColor=="Sky" {
+                --ctp-accent-color: #89dceb;
+            }
+            else if accentColor=="Sapphire" {
+                --ctp-accent-color: #74c7ec;
+            }
+            else if accentColor=="Blue" {
+                --ctp-accent-color: #89b4fa;
+            }
+            else if accentColor=="Lavender" {
+                --ctp-accent-color: #b4befe;
+            }
+
+            --ctp-text: #cdd6f4;
+            --ctp-subtext1: #bac2de;
+            --ctp-subtext0: #a6adc8;
+            --ctp-overlay2: #9399b2;
+            --ctp-overlay1: #7f849c;
+            --ctp-overlay0: #6c7086;
+            --ctp-surface2: #585b70;
+            --ctp-surface1: #45475a;
+            --ctp-surface0: #313244;
+            --ctp-base: #1e1e2e;
+            --ctp-mantle: #181825;
+            --ctp-crust: #11111b;
+        }
+
+        --small-border-radius: 4px;
+        --big-border-radius: 12px;
+    }
+
+    * {
+        color: var(--ctp-text) !important;
+        border-color: var(--ctp-accent-color) !important;
+
+        scrollbar-color: var(--ctp-accent-color) scrollbar_track !important;
+        scrollbar-width: thin !important;
+    }
+
+    /*Scrollbar fix for chrome*/
+    *:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: var(--ctp-accent-color) !important;
+    }
+    *:not([hide-scrollbar]) ::-webkit-scrollbar {
+        width: scrollbar_width !important;
+        background: var(--ctp-surface0)
+    }
+    /*Scrollbar fix for firefox*/
+    ::-webkit-scrollbar-track {
+        background: scrollbar_track !important;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: var(--ctp-accent-colorolor) !important;
+    }
+
+    /*Outline for links*/
+    a {
+        outline-color: var(--ctp-accent-color) !important;
+    }
+
+    a:hover,
+    a strong:hover,
+    a span:hover,
+    i::before,
+    button:hover,
+    .showMore:hover,
+    #wrapper h1,
+    h2,
+    #footer h4 {
+        color: var(--ctp-accent-color) !important;
+        fill: var(--ctp-accent-color) !important;
+    }
+
+    #wrapper {
+        background: var(--ctp-base);
+    }
+    header > div > *,
+    header,
+    #footer,
+    #footer * {
+        background: var(--ctp-mantle) !important;
+    }
+
+    .newEpisodeList,
+    .animeNews .previews {
+        background: var(--ctp-surface0) !important;
+        border-radius: var(--big-border-radius) !important;
+    }
+    .tvSeriesCalendarNavigation,
+    .homepageSupportFAQList {
+        background: var(--ctp-surface1);
+        border-radius: var(--big-border-radius);
+    }
+    .tvSeriesCalendarContent {
+        background: var(--ctp-surface0);
+    }
+
+    i:hover::before {
+        color: var(--ctp-surface0) !important;
+        transition-duration: 0.3s;
+    }
+    li strong,
+    .homeContentGenresList li > * {
+        background: var(--ctp-accent-color) !important;
+        border-radius: var(--small-border-radius) !important;
+        padding: 3px 5px 3px 5px;
+    }
+
+    .catalogNav li a,
+    .button,
+    .hosterSiteVideoButton {
+        background: var(--ctp-accent-color) !important;
+        border-radius: var(--small-border-radius) !important;
+    }
+
+    li strong:hover,
+    .homeContentGenresList li *:hover,
+    .catalogNav li a:hover,
+    .button:hover,
+    .tvSeriesCalendarNavigation .ui-tabs-nav li:hover {
+        background: var(--ctp-surface0) !important;
+        transition-duration: 0.3s;
+    }
+
+    img {
+        border-radius: var(--big-border-radius) !important;
+    }
+
+    /* Stream */
+    #wrapper strong {
+        color: var(--ctp-text) !important;
+    }
+    li span,
+    .coverListItem *,
+    .homeContentPromotionBox *,
+    .catalogNav > *,
+    .coverListNavigation span,
+    .tvSeriesCalendarNavItem {
+        background: none !important;
+    }
+
+    .tvSeriesCalendarNavigation .active {
+        background: var(--ctp-surface2) !important;
+    }
+    .tvSeriesCalendarNavigation .ui-state-active {
+        background: var(--ctp-accent-color) !important;
+    }
+
+    .tvSeriesCalendarNavigation .ui-tabs-nav li:hover span,
+    .tvSeriesCalendarNavigation .ui-tabs-nav li:hover {
+        color: var(--ctp-accent-color) !important;
+    }
+
+    .seriesListHorizontalContent p, .seriesListContainer h3 span{
+        display: none;
+    }
+    
+    /* Image fix */
+    .homeContentPromotionBox img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .seriesListHorizontalContent i:hover {
+        animation: spinAndEnlarge 1.2s forwards;
+    }
+    @keyframes spinAndEnlarge {
+        0% {
+            transform: scale(1) rotate(0deg);
+        }
+        25% {
+            transform: scale(1.2) rotate(45deg);
+        }
+        75% {
+            transform: scale(1.2) rotate(400deg);
+        }
+        100% {
+            transform: scale(1) rotate(360deg);
+        }
+    }
+
+    .liveNewsFeedButton i:hover {
+        animation: wiggle 0.3s ease-in-out alternate;
+    }
+
+    @keyframes wiggle {
+        0% {
+            transform: rotate(-10deg);
+        }
+        33% {
+            transform: rotate(10deg);
+        }
+        66% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg);
+        }
+    }
+}
