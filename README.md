@@ -13,7 +13,7 @@
 
 | Rosé Pine | Rosé Pine Moon | Rosé Pine Dawn |
 |---|---|---|
-|![Rosé Pine with App](assets/rosepine.png)|![Rosé Pine with App](assets/rosepine-moon.png)|![Rosé Pine with App](assets/rosepine-dawn.png)|
+|![Rosé Pine](assets/rosepine.png)|![Rosé Pine](assets/rosepine-moon.png)|![Rosé Pine](assets/rosepine-dawn.png)|
 
 #
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="80" align="right"/>
