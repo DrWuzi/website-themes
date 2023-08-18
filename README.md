@@ -5,9 +5,6 @@
 <h2 align="center">Catppuccin for AniWorld</h2>
 
 
-
-
-
 A theme for aniworld.to using rose pine theme (rosepinetheme.com)
 
 
