@@ -15,4 +15,4 @@
 
 These themes using catppuccin(https://catppuccin.com/)
 
-### I am not supporting or using this service in any way, I just uploaded a Theme for it!
+### I am not supporting any of this services in any way, I just uploaded a Theme for it!
