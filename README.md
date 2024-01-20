@@ -13,6 +13,6 @@
 
 
 
-These themes using rose pine(https://rosepinetheme.com/) & catppuccin(https://catppuccin.com/)
+These themes using catppuccin(https://catppuccin.com/)
 
 ### I am not supporting or using this service in any way, I just uploaded a Theme for it!
