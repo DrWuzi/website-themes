@@ -1,447 +1,424 @@
 /* ==UserStyle==
-@name Catppuccin Theme Aniworld
-@namespace https://github.com/DrWuzi/aniworld-theme
-@version 1.0.0
+@name           AniWorld Catppuccin
+@namespace      github.com/drwuzi
+@version        1.0.0
+@description    Catppuccin theme for GitHub
+@author         DrWuzi
+@updateURL      https://github.com/drwuzi
 
-@updateURL https://github.com/DrWuzi/aniworld-theme/raw/main/
-@author drwuzi
-@license GNU-V3.0
-
-@preprocessor stylus
-
-@var select stylus-style "Themes" [
-    "Latte",
-    "Frappe",
-    "Macchiato",
-	"Mocha",
-]
-
-@var select accentColor "Accent color" [
-	"Rosewater",
-	"Flamingo",
-    "Pink",
-	"Mauve",
-    "Red",
-	"Maroon",
-    "Peach",
-	"Yellow",
-    "Green",
-    "Teal",
-    "Sky",
-    "Sapphire",
-    "Blue",
-    "Lavender",
-]
-
-@var text scrollbar_width "Scrollbar width" 8px
-@var color scrollbar_track "Scrollbar background" "rgba(0,0,0, 0)"
-
+@preprocessor less
+@var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater*", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
+@catppuccin: {
+    @latte: {
+        @rosewater: #dc8a78;
+        @flamingo: #dd7878;
+        @pink: #ea76cb;
+        @mauve: #8839ef;
+        @red: #d20f39;
+        @maroon: #e64553;
+        @peach: #fe640b;
+        @yellow: #df8e1d;
+        @green: #40a02b;
+        @teal: #179299;
+        @sky: #04a5e5;
+        @sapphire: #209fb5;
+        @blue: #1e66f5;
+        @lavender: #7287fd;
+        @text: #4c4f69;
+        @subtext1: #5c5f77;
+        @subtext0: #6c6f85;
+        @overlay2: #7c7f93;
+        @overlay1: #8c8fa1;
+        @overlay0: #9ca0b0;
+        @surface2: #acb0be;
+        @surface1: #bcc0cc;
+        @surface0: #ccd0da;
+        @base: #eff1f5;
+        @mantle: #e6e9ef;
+        @crust: #dce0e8;
+    }
+    ;
+    @frappe: {
+        @rosewater: #f2d5cf;
+        @flamingo: #eebebe;
+        @pink: #f4b8e4;
+        @mauve: #ca9ee6;
+        @red: #e78284;
+        @maroon: #ea999c;
+        @peach: #ef9f76;
+        @yellow: #e5c890;
+        @green: #a6d189;
+        @teal: #81c8be;
+        @sky: #99d1db;
+        @sapphire: #85c1dc;
+        @blue: #8caaee;
+        @lavender: #babbf1;
+        @text: #c6d0f5;
+        @subtext1: #b5bfe2;
+        @subtext0: #a5adce;
+        @overlay2: #949cbb;
+        @overlay1: #838ba7;
+        @overlay0: #737994;
+        @surface2: #626880;
+        @surface1: #51576d;
+        @surface0: #414559;
+        @base: #303446;
+        @mantle: #292c3c;
+        @crust: #232634;
+    }
+    ;
+    @macchiato: {
+        @rosewater: #f4dbd6;
+        @flamingo: #f0c6c6;
+        @pink: #f5bde6;
+        @mauve: #c6a0f6;
+        @red: #ed8796;
+        @maroon: #ee99a0;
+        @peach: #f5a97f;
+        @yellow: #eed49f;
+        @green: #a6da95;
+        @teal: #8bd5ca;
+        @sky: #91d7e3;
+        @sapphire: #7dc4e4;
+        @blue: #8aadf4;
+        @lavender: #b7bdf8;
+        @text: #cad3f5;
+        @subtext1: #b8c0e0;
+        @subtext0: #a5adcb;
+        @overlay2: #939ab7;
+        @overlay1: #8087a2;
+        @overlay0: #6e738d;
+        @surface2: #5b6078;
+        @surface1: #494d64;
+        @surface0: #363a4f;
+        @base: #24273a;
+        @mantle: #1e2030;
+        @crust: #181926;
+    }
+    ;
+    @mocha: {
+        @rosewater: #f5e0dc;
+        @flamingo: #f2cdcd;
+        @pink: #f5c2e7;
+        @mauve: #cba6f7;
+        @red: #f38ba8;
+        @maroon: #eba0ac;
+        @peach: #fab387;
+        @yellow: #f9e2af;
+        @green: #a6e3a1;
+        @teal: #94e2d5;
+        @sky: #89dceb;
+        @sapphire: #74c7ec;
+        @blue: #89b4fa;
+        @lavender: #b4befe;
+        @text: #cdd6f4;
+        @subtext1: #bac2de;
+        @subtext0: #a6adc8;
+        @overlay2: #9399b2;
+        @overlay1: #7f849c;
+        @overlay0: #6c7086;
+        @surface2: #585b70;
+        @surface1: #45475a;
+        @surface0: #313244;
+        @base: #1e1e2e;
+        @mantle: #181825;
+        @crust: #11111b;
+    }
+    ;
+}
+
 @-moz-document domain("aniworld.to") {
 
+
     :root {
-        if stylus-style=="Latte" {
-            if accentColor=="Rosewater" {
-                --ctp-accent-color: #dc8a78;
-            }
-            else if accentColor=="Flamingo" {
-                --ctp-accent-color: #dd7878;
-            }
-            else if accentColor=="Pink" {
-                --ctp-accent-color: #ea76cb;
-            }
-            else if accentColor=="Mauve" {
-                --ctp-accent-color: #8839ef;
-            }
-            else if accentColor=="Red" {
-                --ctp-accent-color: #d20f39;
-            }
-            else if accentColor=="Maroon" {
-                --ctp-accent-color: #e64553;
-            }
-            else if accentColor=="Peach" {
-                --ctp-accent-color: #fe640b;
-            }
-            else if accentColor=="Yellow" {
-                --ctp-accent-color: #df8e1d;
-            }
-            else if accentColor=="Green" {
-                --ctp-accent-color: #40a02b;
-            }
-            else if accentColor=="Teal" {
-                --ctp-accent-color: #179299;
-            }
-            else if accentColor=="Sky" {
-                --ctp-accent-color: #04a5e5;
-            }
-            else if accentColor=="Sapphire" {
-                --ctp-accent-color: #209fb5;
-            }
-            else if accentColor=="Blue" {
-                --ctp-accent-color: #1e66f5;
-            }
-            else if accentColor=="Lavender" {
-                --ctp-accent-color: #7287fd;
-            }
-            
-            --ctp-text: #4c4f69;
-            --ctp-subtext1: #5c5f77;
-            --ctp-subtext0: #6c6f85;
-            --ctp-overlay2: #7c7f93;
-            --ctp-overlay1: #8c8fa1;
-            --ctp-surface2: #acb0be;
-            --ctp-surface1: #bcc0cc;
-            --ctp-overlay0: #9ca0b0;
-            --ctp-surface0: #ccd0da;
-            --ctp-base: #eff1f5;
-            --ctp-mantle: #e6e9ef;
-            --ctp-crust: #dce0e8;
-        }
-        else if stylus-style=="Frappe" {
-            if accentColor=="Rosewater" {
-                --ctp-accent-color: #f2d5cf;
-            }
-            else if accentColor=="Flamingo" {
-                --ctp-accent-color: #eebebe;
-            }
-            else if accentColor=="Pink" {
-                --ctp-accent-color: #f4b8e4;
-            }
-            else if accentColor=="Mauve" {
-                --ctp-accent-color: #ca9ee6;
-            }
-            else if accentColor=="Red" {
-                --ctp-accent-color: #e78284;
-            }
-            else if accentColor=="Maroon" {
-                --ctp-accent-color: #ea999c;
-            }
-            else if accentColor=="Peach" {
-                --ctp-accent-color: #ef9f76;
-            }
-            else if accentColor=="Yellow" {
-                --ctp-accent-color: #e5c890;
-            }
-            else if accentColor=="Green" {
-                --ctp-accent-color: #a6d189;
-            }
-            else if accentColor=="Teal" {
-                --ctp-accent-color: #81c8be;
-            }
-            else if accentColor=="Sky" {
-                --ctp-accent-color: #99d1db;
-            }
-            else if accentColor=="Sapphire" {
-                --ctp-accent-color: #85c1dc;
-            }
-            else if accentColor=="Blue" {
-                --ctp-accent-color: #8caaee;
-            }
-            else if accentColor=="Lavender" {
-                --ctp-accent-color: #babbf1;
-            }
+        #catppuccin(@flavor, @accentColor);
+    }
 
-            --ctp-text: #c6d0f5;
-            --ctp-subtext1: #b5bfe2;
-            --ctp-subtext0: #a5adce;
-            --ctp-overlay2: #949cbb;
-            --ctp-overlay1: #838ba7;
-            --ctp-surface2: #626880;
-            --ctp-overlay0: #737994;
-            --ctp-surface1: #51576d;
-            --ctp-surface0: #414559;
-            --ctp-base: #303446;
-            --ctp-mantle: #292c3c;
-            --ctp-crust: #232634;
-        }
-        else if stylus-style=="Macchiato" {
-            if accentColor=="Rosewater" {
-                --ctp-accent-color: #f4dbd6;
-            }
-            else if accentColor=="Flamingo" {
-                --ctp-accent-color: #f0c6c6;
-            }
-            else if accentColor=="Pink" {
-                --ctp-accent-color: #f5bde6;
-            }
-            else if accentColor=="Mauve" {
-                --ctp-accent-color: #c6a0f6;
-            }
-            else if accentColor=="Red" {
-                --ctp-accent-color: #ed8796;
-            }
-            else if accentColor=="Maroon" {
-                --ctp-accent-color: #ee99a0;
-            }
-            else if accentColor=="Peach" {
-                --ctp-accent-color: #f5a97f;
-            }
-            else if accentColor=="Yellow" {
-                --ctp-accent-color: #eed49f;
-            }
-            else if accentColor=="Green" {
-                --ctp-accent-color: #a6da95;
-            }
-            else if accentColor=="Teal" {
-                --ctp-accent-color: #8bd5ca;
-            }
-            else if accentColor=="Sky" {
-                --ctp-accent-color: #91d7e3;
-            }
-            else if accentColor=="Sapphire" {
-                --ctp-accent-color: #7dc4e4;
-            }
-            else if accentColor=="Blue" {
-                --ctp-accent-color: #8aadf4;
-            }
-            else if accentColor=="Lavender" {
-                --ctp-accent-color: #b7bdf8;
-            }
+    #catppuccin(@lookup, @accent) {
+        @rosewater: @catppuccin[@@lookup][@rosewater];
+        @flamingo: @catppuccin[@@lookup][@flamingo];
+        @pink: @catppuccin[@@lookup][@pink];
+        @mauve: @catppuccin[@@lookup][@mauve];
+        @red: @catppuccin[@@lookup][@red];
+        @maroon: @catppuccin[@@lookup][@maroon];
+        @peach: @catppuccin[@@lookup][@peach];
+        @yellow: @catppuccin[@@lookup][@yellow];
+        @green: @catppuccin[@@lookup][@green];
+        @teal: @catppuccin[@@lookup][@teal];
+        @sky: @catppuccin[@@lookup][@sky];
+        @sapphire: @catppuccin[@@lookup][@sapphire];
+        @blue: @catppuccin[@@lookup][@blue];
+        @lavender: @catppuccin[@@lookup][@lavender];
+        @text: @catppuccin[@@lookup][@text];
+        @subtext1: @catppuccin[@@lookup][@subtext1];
+        @subtext0: @catppuccin[@@lookup][@subtext0];
+        @overlay2: @catppuccin[@@lookup][@overlay2];
+        @overlay1: @catppuccin[@@lookup][@overlay1];
+        @overlay0: @catppuccin[@@lookup][@overlay0];
+        @surface2: @catppuccin[@@lookup][@surface2];
+        @surface1: @catppuccin[@@lookup][@surface1];
+        @surface0: @catppuccin[@@lookup][@surface0];
+        @base: @catppuccin[@@lookup][@base];
+        @mantle: @catppuccin[@@lookup][@mantle];
+        @crust: @catppuccin[@@lookup][@crust];
+        @accent-color: @catppuccin[@@lookup][@@accent];
 
-            --ctp-text: #cad3f5;
-            --ctp-subtext1: #b8c0e0;
-            --ctp-subtext0: #a5adcb;
-            --ctp-overlay2: #939ab7;
-            --ctp-overlay1: #8087a2;
-            --ctp-overlay0: #6e738d;
-            --ctp-surface2: #5b6078;
-            --ctp-surface1: #494d64;
-            --ctp-surface0: #363a4f;
-            --ctp-base: #24273a;
-            --ctp-mantle: #1e2030;
-            --ctp-crust: #181926;
-        }
-        else if stylus-style=="Mocha" {
-            if accentColor=="Rosewater" {
-                --ctp-accent-color: #f5e0dc;
-            }
-            else if accentColor=="Flamingo" {
-                --ctp-accent-color: #f2cdcd;
-            }
-            else if accentColor=="Pink" {
-                --ctp-accent-color: #f5c2e7;
-            }
-            else if accentColor=="Mauve" {
-                --ctp-accent-color: #cba6f7;
-            }
-            else if accentColor=="Red" {
-                --ctp-accent-color: #f38ba8;
-            }
-            else if accentColor=="Maroon" {
-                --ctp-accent-color: #eba0ac;
-            }
-            else if accentColor=="Peach" {
-                --ctp-accent-color: #fab387;
-            }
-            else if accentColor=="Yellow" {
-                --ctp-accent-color: #f9e2af;
-            }
-            else if accentColor=="Green" {
-                --ctp-accent-color: #a6e3a1;
-            }
-            else if accentColor=="Teal" {
-                --ctp-accent-color: #94e2d5;
-            }
-            else if accentColor=="Sky" {
-                --ctp-accent-color: #89dceb;
-            }
-            else if accentColor=="Sapphire" {
-                --ctp-accent-color: #74c7ec;
-            }
-            else if accentColor=="Blue" {
-                --ctp-accent-color: #89b4fa;
-            }
-            else if accentColor=="Lavender" {
-                --ctp-accent-color: #b4befe;
-            }
 
-            --ctp-text: #cdd6f4;
-            --ctp-subtext1: #bac2de;
-            --ctp-subtext0: #a6adc8;
-            --ctp-overlay2: #9399b2;
-            --ctp-overlay1: #7f849c;
-            --ctp-overlay0: #6c7086;
-            --ctp-surface2: #585b70;
-            --ctp-surface1: #45475a;
-            --ctp-surface0: #313244;
-            --ctp-base: #1e1e2e;
-            --ctp-mantle: #181825;
-            --ctp-crust: #11111b;
+        @small-border-radius: 8px;
+        @big-border-radius: 8px;
+
+
+
+        /* Vertikale Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        --small-border-radius: 4px;
-        --big-border-radius: 12px;
-    }
-
-    * {
-        color: var(--ctp-text) !important;
-        border-color: var(--ctp-accent-color) !important;
-
-        scrollbar-color: var(--ctp-accent-color) scrollbar_track !important;
-        scrollbar-width: thin !important;
-    }
-
-    /*Scrollbar fix for chrome*/
-    *:not([hide-scrollbar]) ::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        background: var(--ctp-accent-color) !important;
-    }
-    *:not([hide-scrollbar]) ::-webkit-scrollbar {
-        width: scrollbar_width !important;
-        background: var(--ctp-surface0)
-    }
-    /*Scrollbar fix for firefox*/
-    ::-webkit-scrollbar-track {
-        background: scrollbar_track !important;
-    }
-    ::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        background: var(--ctp-accent-colorolor) !important;
-    }
-
-    /*Outline for links*/
-    a {
-        outline-color: var(--ctp-accent-color) !important;
-    }
-
-    a:hover,
-    a strong:hover,
-    a span:hover,
-    i::before,
-    button:hover,
-    .showMore:hover,
-    #wrapper h1,
-    h2,
-    #footer h4 {
-        color: var(--ctp-accent-color) !important;
-        fill: var(--ctp-accent-color) !important;
-    }
-
-    #wrapper {
-        background: var(--ctp-base);
-    }
-    header > div > *,
-    header,
-    #footer,
-    #footer * {
-        background: var(--ctp-mantle) !important;
-    }
-
-    .newEpisodeList,
-    .animeNews .previews {
-        background: var(--ctp-surface0) !important;
-        border-radius: var(--big-border-radius) !important;
-    }
-    .tvSeriesCalendarNavigation,
-    .homepageSupportFAQList {
-        background: var(--ctp-surface1);
-        border-radius: var(--big-border-radius);
-    }
-    .tvSeriesCalendarContent {
-        background: var(--ctp-surface0);
-    }
-
-    i:hover::before {
-        color: var(--ctp-surface0) !important;
-        transition-duration: 0.3s;
-    }
-    li strong,
-    .homeContentGenresList li > * {
-        background: var(--ctp-accent-color) !important;
-        border-radius: var(--small-border-radius) !important;
-        padding: 3px 5px 3px 5px;
-    }
-
-    .catalogNav li a,
-    .button,
-    .hosterSiteVideoButton {
-        background: var(--ctp-accent-color) !important;
-        border-radius: var(--small-border-radius) !important;
-    }
-
-    li strong:hover,
-    .homeContentGenresList li *:hover,
-    .catalogNav li a:hover,
-    .button:hover,
-    .tvSeriesCalendarNavigation .ui-tabs-nav li:hover {
-        background: var(--ctp-surface0) !important;
-        transition-duration: 0.3s;
-    }
-
-    img {
-        border-radius: var(--big-border-radius) !important;
-    }
-
-    /* Stream */
-    #wrapper strong {
-        color: var(--ctp-text) !important;
-    }
-    li span,
-    .coverListItem *,
-    .homeContentPromotionBox *,
-    .catalogNav > *,
-    .coverListNavigation span,
-    .tvSeriesCalendarNavItem {
-        background: none !important;
-    }
-
-    .tvSeriesCalendarNavigation .active {
-        background: var(--ctp-surface2) !important;
-    }
-    .tvSeriesCalendarNavigation .ui-state-active {
-        background: var(--ctp-accent-color) !important;
-    }
-
-    .tvSeriesCalendarNavigation .ui-tabs-nav li:hover span,
-    .tvSeriesCalendarNavigation .ui-tabs-nav li:hover {
-        color: var(--ctp-accent-color) !important;
-    }
-
-    .seriesListHorizontalContent p, .seriesListContainer h3 span{
-        display: none;
-    }
-    
-    /* Image fix */
-    .homeContentPromotionBox img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .seriesListHorizontalContent i:hover {
-        animation: spinAndEnlarge 1.2s forwards;
-    }
-    @keyframes spinAndEnlarge {
-        0% {
-            transform: scale(1) rotate(0deg);
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: @base;
         }
-        25% {
-            transform: scale(1.2) rotate(45deg);
-        }
-        75% {
-            transform: scale(1.2) rotate(400deg);
-        }
-        100% {
-            transform: scale(1) rotate(360deg);
-        }
-    }
 
-    .liveNewsFeedButton i:hover {
-        animation: wiggle 0.3s ease-in-out alternate;
-    }
+        /* Griff */
+        ::-webkit-scrollbar-thumb {
+            background-color: @accent-color;
+            border-radius: 8px;
+        }
 
-    @keyframes wiggle {
-        0% {
-            transform: rotate(-10deg);
+
+        * {
+
+            &:hover {
+                transition: 0.5s ease-in-out;
+            }
+            color: @text !important;
+            border-color: none !important;
         }
-        33% {
-            transform: rotate(10deg);
+
+
+        #wrapper {
+            background: @base !important;
+
+            ::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background-color: transparent !important;
+            }
+
+            header {
+                .header-logo {
+                    filter: hue-rotate(240deg) saturate(300%);
+                }
+                i,
+                strong {
+                    color: @accent-color !important;
+                }
+                .icon-menu span {
+                    background: @accent-color !important;
+                }
+            }
+
+            img {
+                border-radius: @small-border-radius !important;
+            }
+
+            footer span {
+                display: none !important;
+            }
+
+            header,
+            .header-content,
+            .header-content strong,
+            .header-container,
+            .logo-wrapper {
+                background: @mantle !important;
+            }
+
+            .container {
+                .listTag {
+                    &.green {
+                        border-color: @accent-color;
+                    }
+                }
+                .button {
+                    &.blue {
+                        background: none;
+                        border-radius: @small-border-radius;
+                        &:hover {
+                            background: @overlay0;
+                        }
+                    }
+                } // Top priview
+                .homeContentPromotionBox > div > div {
+                    background: @base !important;
+                } // All small cards
+                .carousel {
+                    .seriesListHorizontalCover {
+                        border-radius: @small-border-radius !important;
+                    }
+
+                    .coverListNavigation span {
+                        i {
+                            color: @accent-color !important;
+                        }
+                        background: none !important;
+                        box-shadow: none !important;
+                    }
+                } // New Episodes
+                .newEpisodeList {
+                    border-radius: @big-border-radius !important;
+
+                    background: @surface0 !important;
+                } // News
+                .previews {
+                    .preview {
+                        div {
+                            &:nth-child(1) > a {
+                                border-top-left-radius: @small-border-radius;
+                            }
+                            &:nth-child(4) > a {
+                                border-top-right-radius: @small-border-radius;
+                            }
+                            a {
+                                border-color: @accent-color;
+                            }
+                        }
+                    }
+                } // Calendar
+                .tvSeriesCalendarNavigation {
+                    border-radius: @big-border-radius;
+                    background: @surface1 !important;
+                    .tvSeriesCalendarContent {
+                        background: @surface0 !important;
+                    }
+                    ul li {
+                        &.ui-tabs-active {
+                            background: @overlay0 !important;
+                        }
+                    }
+                    a.button.blue {
+                        border: none;
+                    }
+                } // Support
+                #supportFAQ {
+                    .homepageSupportFAQList {
+                        border-radius: @big-border-radius !important;
+                        background: @surface0 !important;
+                    }
+                }
+
+
+                .homeContentGenresList a,
+                .catalogNav li {
+                    background: none !important;
+                    border-radius: @small-border-radius !important;
+                    &:hover {
+                        background: @overlay0 !important;
+                    }
+                }
+            }
+
+
+
+
+
+            #footer {
+                footer {
+                    h4 {
+                        color: @accent-color !important;
+                    }
+                }
+                min-height: 0;
+                .footer-container {
+                    background: @mantle !important;
+                }
+            }
         }
-        66% {
-            transform: rotate(-10deg);
+        ::selection {
+            background: fadeout(@accent-color, 80%) !important;
+            color: @text !important;
         }
-        100% {
-            transform: rotate(10deg);
+        
+        
+        // /anime/stream/
+        
+        #series .title{
+                
+        }
+        
+        .add-series {
+            .add-series-button{
+                background: @surface1 !important;
+            }
+            .collections {
+                background: @surface0 !important;
+                
+                .true .fas::before{
+                    color: @accent-color !important;
+                }
+                li:nth-child(3){
+                    display: none !important;
+                }
+                .setFavourite:hover, .setWatchlist:hover{
+                    background: @overlay0 !important;
+                }
+            }
+        }
+        
+        .hosterSiteDirectNav{
+            ul{
+                li{
+                    .active{
+                        background: rgba(@accent-color, 0.5) !important;
+                    }
+                    span{
+                        background: @surface0 !important;
+                        strong{
+                            color: @text !important;
+                        }
+                    }
+                    a{
+                        margin: 0;
+                        background: @surface0 !important;
+                        color: @text !important;
+                    }
+                    a.seen{
+                        background: rgba(@accent-color, 0.25) !important;
+                    }
+                    a:hover{
+                        background: @overlay0 !important;
+                    }
+                }
+            }
+        }
+
+        .seasonEpisodesList{
+            thead{
+                tr{
+                    background: @surface1 !important;
+                }
+            }
+            tbody{
+                tr {
+                    background: @surface0 !important;
+                }
+                tr.seen{
+                        background: rgba(@accent-color, 0.25) !important;
+                }
+                tr:hover{
+                    background: @overlay0 !important;
+                }
+            }
+        }
+        .allSeriesBox{
+            background: @surface1 !important;
+            .preBox{
+                background: @surface0 !important;
+            }
         }
     }
 }
