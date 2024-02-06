@@ -14,5 +14,6 @@
 
 
 These themes using catppuccin(https://catppuccin.com/)
+[![Repo Logo](https://github.com/catppuccino.png)](https://github.com/catppuccino)
 
 ### I am not supporting any of this services in any way, I just uploaded a Theme for it!
