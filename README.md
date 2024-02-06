@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="80" align="right"/>
+<a href='https://github.com/catppuccin'><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="80" align="right"/></a>
 <h1 align="left">Catppuccin for AniWorld</h1>
 
 <h2>Usage</h2>
@@ -14,6 +14,6 @@
 
 
 These themes using catppuccin(https://catppuccin.com/)
-[![Repo Logo](https://github.com/catppuccin.png)](https://github.com/catppuccin)
+[![Catpuccin Logo](https://github.com/catppuccin.png)](https://github.com/catppuccin)
 
 ### I am not supporting any of this services in any way, I just uploaded a Theme for it!
