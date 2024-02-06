@@ -3,7 +3,7 @@
 
 <h2>Usage</h2>
 
-1. Install Stylus extension on your browser. [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/)
+1. Install [Stylus](https://github.com/openstyles/stylus) extension on your browser. [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/)
 2. In the main manager interface on the extension, check the box `as Usercss`.
 3. Download and install the theme [here](https://github.com/DrWuzi/aniworld-theme/raw/main/CatppuccinAniworld.user.css).
 
@@ -12,5 +12,3 @@
 |![Latte](assets/catppuccin/latte.png)|![Frappe](assets/catppuccin/frappe.png)|![Macchiato](assets/catppuccin/macchiato.png)|![Mocha](assets/catppuccin/mocha.png)|
 
 These themes using [catppuccin's](https://catppuccin.com/) pastel color [palettes](https://github.com/catppuccin/catppuccin#-palette).
-
-### I am not supporting any of this services in any way, I just uploaded a Theme for it!
