@@ -11,6 +11,6 @@
 |---|---|---|---|
 |![Latte](assets/catppuccin/latte.png)|![Frappe](assets/catppuccin/frappe.png)|![Macchiato](assets/catppuccin/macchiato.png)|![Mocha](assets/catppuccin/mocha.png)|
 
-These themes using [catppuccin's](https://catppuccin.com/) color board.
+These themes using [catppuccin's](https://catppuccin.com/) color [Palette](https://github.com/catppuccin/catppuccin#-palette).
 
 ### I am not supporting any of this services in any way, I just uploaded a Theme for it!
