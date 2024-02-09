@@ -1,10 +1,11 @@
 /* ==UserStyle==
 @name           AniWorld Catppuccin
-@namespace      github.com/drwuzi
+@namespace      https://github.com/DrWuzi/website-themes
 @version        1.0.0
-@description    Catppuccin theme for GitHub
+@description    Catppuccin theme for Aniworld
 @author         DrWuzi
-@updateURL      https://github.com/drwuzi
+@updateURL      https://github.com/DrWuzi/website-themes/raw/main/CatppuccinAniworld.user.css
+@license        GNU-V3.0
 
 @preprocessor less
 @var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
@@ -196,7 +197,10 @@
             color: @text !important;
             border-color: none !important;
         }
-
+        
+        strong, a, span, i{
+            color: @text !important;
+        }
 
         #wrapper {
             background: @base !important;
@@ -221,7 +225,7 @@
                     background: @accent-color !important;
                 }
             }
-
+            
             img {
                 border-radius: @small-border-radius !important;
             }
@@ -257,10 +261,14 @@
                     background: @base !important;
                 } // All small cards
                 .carousel {
-                    .seriesListHorizontalCover {
-                        border-radius: @small-border-radius !important;
-                    }
-
+                    .coverListItem{
+                        .seriesListHorizontalCover {
+                            border-radius: @small-border-radius !important;
+                        }
+                        a>h3>span{
+                            display: none !important;
+                        }
+                     }
                     .coverListNavigation span {
                         i {
                             color: @accent-color !important;
@@ -296,12 +304,24 @@
                         background: @surface0 !important;
                     }
                     ul li {
+                        &.active{
+                            background: none !important;
+                        }
                         &.ui-tabs-active {
                             background: @overlay0 !important;
+                        }
+                        &:hover{
+                            background: @overlay2 !important;
                         }
                     }
                     a.button.blue {
                         border: none;
+                    }
+                    .tvSeriesCalendarNavItem {
+                        background: none !important;
+                        i{
+                            color: @accent-color !important;
+                        }
                     }
                 } // Support
                 #supportFAQ {
@@ -347,24 +367,75 @@
         // /anime/stream/
         
         #series .title{
+            background: @mantle !important;
+            border-bottom: 1px solid @accent-color;
+            .backdrop{
                 
-        }
-        
-        .add-series {
-            .add-series-button{
-                background: @surface1 !important;
             }
-            .collections {
-                background: @surface0 !important;
-                
-                .true .fas::before{
-                    color: @accent-color !important;
+        
+            .genres{
+                ul{
+                    li{
+                        a, button{
+                            border: 1px solid @accent-color !important;
+                            border-radius: @small-border-radius !important;
+                            &:hover{
+                                background: @overlay0 !important;
+                            }
+                        }
+                    }
                 }
-                li:nth-child(3){
-                    display: none !important;
+            }
+            .add-series {
+                .add-series-button{
+                    background: @surface1 !important;
                 }
-                .setFavourite:hover, .setWatchlist:hover{
-                    background: @overlay0 !important;
+                .collections {
+                    background: @surface0 !important;
+
+                    .true .fas::before{
+                        color: @accent-color !important;
+                    }
+                    li:nth-child(3){
+                        display: none !important;
+                    }
+                    .setFavourite:hover, .setWatchlist:hover{
+                        background: @overlay0 !important;
+                    }
+                    .starRatingResult{
+                        background: none !important;
+                        *{
+                            background: none !important;
+                        }
+                        span{
+                            color: @accent-color !important;
+                        }
+                    }
+                    .rating-control{
+                        ::before{
+                            display: none !important;
+                        }
+                        .current-rating{
+                            svg {
+                                .base{
+                                    fill: @accent-color !important;
+                                }
+                                .mouth, .right-eye, .left-eye{
+                                    fill: @surface0 !important;
+                                }
+                            }
+                        }
+                        .rating-option{
+                            svg {
+                                .base{
+                                    fill: @overlay0 !important;
+                                }
+                                .mouth, .right-eye, .left-eye{
+                                    fill: @surface0 !important;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -394,6 +465,118 @@
                     }
                 }
             }
+        }
+        
+        .hosterSiteTitle{
+            padding-bottom: 20px;
+        }
+        .hosterSectionTitle{
+            display: none;
+        }
+        .hosterSiteVideo{
+            background: none;
+            .changeLanguage .changeLanguageBox{
+                background: none;
+                border: none;
+                margin: 0 auto 5px auto;
+                .selectedLanguage{
+                    border: 4px solid @accent-color;
+                }
+            }
+            .inSiteWebStream{
+                border: 4px solid @accent-color;
+                border-radius: @big-border-radius;
+                div:nth-child(2){
+                    background: none !important;
+                    text-align: center;
+                }
+                .plyr-container{
+                    .plyr__controls{
+                        .plyr__progress{
+                            .plyr__progress__buffer{
+                                .plyr__volume{
+                                    input{
+                                        color: @accent-color !important;
+                                    }
+                                }
+                            }
+                        }
+                        .plyr--full-ui input[type=range]{
+                            display: none !important;
+                        }
+                    }
+
+                }
+            }
+            
+            
+            ul>li>div{
+                border: 2px solid @accent-color;
+                background: none !important;
+                span{
+                    padding: 0 0 0 2px;
+                }
+                .hosterSiteVideoButton{
+                    background: @accent-color;
+                    border-radius: @small-border-radius;
+                }
+                .button{
+                    visibility: hidden;
+                    &:before{
+                        content: 'Melden';
+                        visibility: visible;
+                        background: @overlay0 !important;
+                        padding: 2px 2px !important;
+                        border-radius: 2px;
+                        &:hover{
+                            background: @overlay1 !important;
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+        #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13){
+            display: none;
+        }
+        
+        .pageTitle{
+
+            .dropDownContainer{
+                .normalDropdownButton{
+                    border: 1px solid @accent-color;
+                    border-radius: @small-border-radius;
+                    &:hover{
+                        background: @overlay0 !important;
+                    }
+                }
+                .normalDropdownButton[data-active-status="1"]{
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    background: none !important;
+                    &:hover{
+                        background: @overlay0 !important;
+                    }
+                }
+                .normalDropdown{
+                    border: 1px solid @accent-color;
+                    border-bottom-left-radius: @small-border-radius;
+                    border-bottom-right-radius: @small-border-radius;
+                    .clearAllEpisodesFromThisSeason{
+                        background: @overlay1 !important;
+                        
+                        &:hover{
+                            background: @overlay0 !important;
+                        }
+                        &:nth-child(2){
+                            border-bottom-left-radius: @small-border-radius;
+                            border-bottom-right-radius: @small-border-radius;
+                        }
+                    }
+                }
+            }
+
         }
 
         .seasonEpisodesList{
