@@ -197,8 +197,11 @@
             color: @text !important;
             border-color: none !important;
         }
-        
-        strong, a, span, i{
+
+        strong,
+        a,
+        span,
+        i {
             color: @text !important;
         }
 
@@ -225,12 +228,12 @@
                     background: @accent-color !important;
                 }
             }
-            
+
             img {
                 border-radius: @small-border-radius !important;
             }
 
-            footer span {
+            .paragraph-end {
                 display: none !important;
             }
 
@@ -240,6 +243,91 @@
             .header-container,
             .logo-wrapper {
                 background: @mantle !important;
+            }
+
+            .modal {
+                background: @surface0;
+                display: none;
+                animation: hideModal 3s forwards;
+                border-radius: @big-border-radius;
+                .icon-container {
+                    background: none;
+                }
+                ul li:hover {
+                    background: @overlay0 !important;
+                }
+                ul li:first-child {
+                    border-top-left-radius: @big-border-radius;
+                    border-top-right-radius: @big-border-radius;
+                }
+                ul li:last-child {
+                    border-bottom-left-radius: @big-border-radius;
+                    border-bottom-right-radius: @big-border-radius;
+                }
+            }
+
+            /* Show the modal when hovering over the dropdown */
+            .user.offset-navigation > .dd:hover .modal,
+            .user.offset-navigation > .dd .modal:hover {
+                display: block !important;
+            }
+
+            @keyframes hideModal {
+                100% {
+                    display: none;
+                }
+            }
+
+            .liveNewsFeedButton i:hover {
+                animation: wiggle 0.3s ease-in-out alternate;
+            }
+
+            @keyframes wiggle {
+                0% {
+                    transform: rotate(-10deg);
+                }
+                33% {
+                    transform: rotate(10deg);
+                }
+                66% {
+                    transform: rotate(-10deg);
+                }
+                100% {
+                    transform: rotate(10deg);
+                }
+            }
+
+            .primary-navigation > ul > li > ul > li {
+
+                background: @surface0;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+                &:first-child {
+                    border-top-left-radius: @big-border-radius;
+                    border-top-right-radius: @big-border-radius;
+                }
+                &:last-child {
+                    border-bottom-left-radius: @big-border-radius;
+                    border-bottom-right-radius: @big-border-radius;
+                }
+            }
+
+            .shoutboxHeader {
+                background: @surface1 !important;
+            }
+            .shoutbox {
+                bottom: 5px;
+                right: 5px;
+                box-shadow: none;
+                border-radius: @big-border-radius;
+                background: @surface0;
+            }
+            .shoutboxBodyForm {
+                background: @surface1 !important;
+            }
+            .shoutboxIcons {
+                height: 50px;
             }
 
             .container {
@@ -261,14 +349,14 @@
                     background: @base !important;
                 } // All small cards
                 .carousel {
-                    .coverListItem{
+                    .coverListItem {
                         .seriesListHorizontalCover {
                             border-radius: @small-border-radius !important;
                         }
-                        a>h3>span{
+                        a > h3 > span {
                             display: none !important;
                         }
-                     }
+                    }
                     .coverListNavigation span {
                         i {
                             color: @accent-color !important;
@@ -304,13 +392,13 @@
                         background: @surface0 !important;
                     }
                     ul li {
-                        &.active{
+                        &.active {
                             background: none !important;
                         }
                         &.ui-tabs-active {
                             background: @overlay0 !important;
                         }
-                        &:hover{
+                        &:hover {
                             background: @overlay2 !important;
                         }
                     }
@@ -319,7 +407,7 @@
                     }
                     .tvSeriesCalendarNavItem {
                         background: none !important;
-                        i{
+                        i {
                             color: @accent-color !important;
                         }
                     }
@@ -361,25 +449,20 @@
         ::selection {
             background: fadeout(@accent-color, 80%) !important;
             color: @text !important;
-        }
-        
-        
-        // /anime/stream/
-        
-        #series .title{
+        } // /anime/stream/
+        #series .title {
             background: @mantle !important;
             border-bottom: 1px solid @accent-color;
-            .backdrop{
-                
-            }
-        
-            .genres{
-                ul{
-                    li{
-                        a, button{
+            .backdrop {}
+
+            .genres {
+                ul {
+                    li {
+                        a,
+                        button {
                             border: 1px solid @accent-color !important;
                             border-radius: @small-border-radius !important;
-                            &:hover{
+                            &:hover {
                                 background: @overlay0 !important;
                             }
                         }
@@ -387,50 +470,55 @@
                 }
             }
             .add-series {
-                .add-series-button{
+                .add-series-button {
                     background: @surface1 !important;
                 }
                 .collections {
                     background: @surface0 !important;
 
-                    .true .fas::before{
+                    .true .fas::before {
                         color: @accent-color !important;
                     }
-                    li:nth-child(3){
+                    li:nth-child(3) {
                         display: none !important;
                     }
-                    .setFavourite:hover, .setWatchlist:hover{
+                    .setFavourite:hover,
+                    .setWatchlist:hover {
                         background: @overlay0 !important;
                     }
-                    .starRatingResult{
+                    .starRatingResult {
                         background: none !important;
-                        *{
+                        * {
                             background: none !important;
                         }
-                        span{
+                        span {
                             color: @accent-color !important;
                         }
                     }
-                    .rating-control{
-                        ::before{
+                    .rating-control {
+                        ::before {
                             display: none !important;
                         }
-                        .current-rating{
+                        .current-rating {
                             svg {
-                                .base{
+                                .base {
                                     fill: @accent-color !important;
                                 }
-                                .mouth, .right-eye, .left-eye{
+                                .mouth,
+                                .right-eye,
+                                .left-eye {
                                     fill: @surface0 !important;
                                 }
                             }
                         }
-                        .rating-option{
+                        .rating-option {
                             svg {
-                                .base{
+                                .base {
                                     fill: @overlay0 !important;
                                 }
-                                .mouth, .right-eye, .left-eye{
+                                .mouth,
+                                .right-eye,
+                                .left-eye {
                                     fill: @surface0 !important;
                                 }
                             }
@@ -439,168 +527,310 @@
                 }
             }
         }
-        
-        .hosterSiteDirectNav{
-            ul{
-                li{
-                    .active{
+
+        .hosterSiteDirectNav {
+            ul {
+                li {
+                    .active {
                         background: rgba(@accent-color, 0.5) !important;
                     }
-                    span{
+                    span {
                         background: @surface0 !important;
-                        strong{
+                        strong {
                             color: @text !important;
                         }
                     }
-                    a{
+                    a {
                         margin: 0;
                         background: @surface0 !important;
                         color: @text !important;
                     }
-                    a.seen{
+                    a.seen {
                         background: rgba(@accent-color, 0.25) !important;
                     }
-                    a:hover{
+                    a:hover {
                         background: @overlay0 !important;
                     }
                 }
             }
         }
-        
-        .hosterSiteTitle{
+
+        .hosterSiteTitle {
             padding-bottom: 20px;
         }
-        .hosterSectionTitle{
+        .hosterSectionTitle {
             display: none;
         }
-        .hosterSiteVideo{
+        .hosterSiteVideo {
             background: none;
-            .changeLanguage .changeLanguageBox{
+            .inSiteWebStream {
+                background: none !important;
+            }
+            .changeLanguage .changeLanguageBox {
                 background: none;
                 border: none;
                 margin: 0 auto 5px auto;
-                .selectedLanguage{
+                .selectedLanguage {
                     border: 4px solid @accent-color;
                 }
             }
-            .inSiteWebStream{
+            .inSiteWebStream {
                 border: 4px solid @accent-color;
                 border-radius: @big-border-radius;
-                div:nth-child(2){
-                    background: none !important;
+                div:nth-child(2) {
+                    background: @base !important;
                     text-align: center;
                 }
-                .plyr-container{
-                    .plyr__controls{
-                        .plyr__progress{
-                            .plyr__progress__buffer{
-                                .plyr__volume{
-                                    input{
+                .plyr-container {
+                    .plyr__controls {
+                        .plyr__progress {
+                            .plyr__progress__buffer {
+                                .plyr__volume {
+                                    input {
                                         color: @accent-color !important;
                                     }
                                 }
                             }
                         }
-                        .plyr--full-ui input[type=range]{
+                        .plyr--full-ui input[type=range] {
                             display: none !important;
                         }
                     }
-
                 }
             }
-            
-            
-            ul>li>div{
+
+
+            ul > li > div {
                 border: 2px solid @accent-color;
                 background: none !important;
-                span{
+                span {
                     padding: 0 0 0 2px;
                 }
-                .hosterSiteVideoButton{
-                    background: @accent-color;
+                .hosterSiteVideoButton {
+                    border: 1px solid @accent-color;
                     border-radius: @small-border-radius;
+                    background: none;
+                    &:hover {
+                        background: @overlay0 !important;
+                    }
                 }
-                .button{
+                .button {
                     visibility: hidden;
-                    &:before{
+                    &:before {
                         content: 'Melden';
                         visibility: visible;
                         background: @overlay0 !important;
                         padding: 2px 2px !important;
                         border-radius: 2px;
-                        &:hover{
+                        &:hover {
                             background: @overlay1 !important;
                         }
                     }
                 }
             }
-            
         }
-        
-        #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13){
+        .seasonListBig li {
+            border-radius: @big-border-radius;
+        }
+
+        #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13) {
             display: none;
         }
-        
-        .pageTitle{
+        .ContentContainerBox h3 span {
+            display: none;
+        }
 
-            .dropDownContainer{
-                .normalDropdownButton{
+        .pageTitle {
+
+            .dropDownContainer {
+                .normalDropdownButton {
                     border: 1px solid @accent-color;
                     border-radius: @small-border-radius;
-                    &:hover{
+                    &:hover {
                         background: @overlay0 !important;
                     }
                 }
-                .normalDropdownButton[data-active-status="1"]{
+                .normalDropdownButton[data-active-status="1"] {
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
                     background: none !important;
-                    &:hover{
+                    &:hover {
                         background: @overlay0 !important;
                     }
                 }
-                .normalDropdown{
+                .normalDropdown {
                     border: 1px solid @accent-color;
                     border-bottom-left-radius: @small-border-radius;
                     border-bottom-right-radius: @small-border-radius;
-                    .clearAllEpisodesFromThisSeason{
+                    .clearAllEpisodesFromThisSeason {
                         background: @overlay1 !important;
-                        
-                        &:hover{
+
+                        &:hover {
                             background: @overlay0 !important;
                         }
-                        &:nth-child(2){
+                        &:nth-child(2) {
                             border-bottom-left-radius: @small-border-radius;
                             border-bottom-right-radius: @small-border-radius;
                         }
                     }
                 }
             }
-
         }
 
-        .seasonEpisodesList{
-            thead{
-                tr{
+        .seasonEpisodesList {
+            thead {
+                tr {
                     background: @surface1 !important;
                 }
             }
-            tbody{
+            tbody {
                 tr {
                     background: @surface0 !important;
                 }
-                tr.seen{
-                        background: rgba(@accent-color, 0.25) !important;
+                tr.seen {
+                    background: rgba(@accent-color, 0.25) !important;
                 }
-                tr:hover{
+                tr:hover {
                     background: @overlay0 !important;
                 }
             }
         }
-        .allSeriesBox{
+        .allSeriesBox {
             background: @surface1 !important;
-            .preBox{
+            .preBox {
                 background: @surface0 !important;
+            }
+        }
+
+        .supportSearchForm > input {
+            background: @base;
+            padding: 24px 15px 20px 24px;
+        }
+
+        .seriesListNavigation {
+            background: none;
+            a {
+                border-color: @accent-color !important;
+            }
+        }
+
+        .seriesGenreList {
+            background: @surface0 !important;
+            border-radius: @small-border-radius;
+        }
+        #serInput {
+            background: @surface2;
+            border-radius: @small-border-radius;
+            border: 1px solid @overlay0;
+            padding: 15px 15px;
+        }
+
+        .welcomePage {
+            .welcomeMessage {
+                background: none;
+            }
+            ul li a{
+                border-color: @accent-color;
+            }
+            .messageAlert{
+                background: @surface0;
+                border: 1px solid @accent-color;
+                border-radius: @small-border-radius;
+            }
+        }
+        .accountFeatures {
+            background: @mantle;
+            .container{
+                padding-bottom: 100px;
+            }
+            .brandButtonSectionCenter a {
+                border-color: @accent-color;
+                &:hover{
+                    background: @overlay0;
+                }
+            }
+        }
+        .fullBackgroundSize{
+            background: none;
+            input{
+                border-color: @accent-color !important; 
+            }
+        }
+        .searchResults{
+            li a{
+                background: @surface0 !important;
+                border-radius: @small-border-radius;
+                &:hover{
+                    box-shadow: 0 1px 8px @accent-color;
+                }
+            }
+        }
+        .seriesWishListHeader{
+            background: none;
+            .button.blue.small.right{
+                background: none !important;
+                border: 1px solid @accent-color;
+                border-radius: @small-border-radius;
+                &:hover{
+                    background: @overlay0 !important;
+                }
+            }
+        }
+        .calendar.row li{
+            a span{
+                background: @surface0 !important;
+                border: none;
+                &:hover{
+                    background: @overlay0 !important;
+                }
+            }
+            &:first-child a span{
+                border-top-left-radius: @small-border-radius;
+                border-bottom-left-radius: @small-border-radius;
+            }
+            &:last-child a span{
+                border-top-right-radius: @small-border-radius;
+                border-bottom-right-radius: @small-border-radius;
+            }
+            &.now a span{
+                background: @surface1 !important;
+                &:hover{
+                    background: @overlay0 !important;
+                }
+            }
+        }
+        .calendarList>h3{
+            background: @surface0;
+            border: none;
+            border-bottom: 1px solid @accent-color
+        }
+        .randomFormHeader {
+            background: none;
+        }
+        .randomForm {
+            background: @surface0;
+            border-radius: @big-border-radius;
+            .randomFormBackground {
+                background: none;
+                li a {
+                    background: none;
+                    border: 1px solid @accent-color;
+                    border-radius: @small-border-radius;
+                    &:hover{
+                        background: @overlay0;
+                    }
+                }
+                li.ui-tabs-active.ui-state-active a{
+                    background: @base;
+                    border: 1px solid @accent-color;
+                                        &:hover{
+                        background: @overlay0;
+                    }
+                }
+            }
+            .randomFormContent{
+                background: none;
+                box-shadow: none;
             }
         }
     }
