@@ -6,8 +6,4 @@
 2. In the main manager interface on the extension, check the box `as Usercss`.
 3. Download and install the theme.
 
-| Latte | Frappe | Macchiato | Mocha |
-|---|---|---|---|
-|![Latte](assets/catppuccin/latte.png)|![Frappe](assets/catppuccin/frappe.png)|![Macchiato](assets/catppuccin/macchiato.png)|![Mocha](assets/catppuccin/mocha.png)|
-
 These themes using [catppuccin's](https://catppuccin.com/) pastel color [palettes](https://github.com/catppuccin/catppuccin#-palette).
