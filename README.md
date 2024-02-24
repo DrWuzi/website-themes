@@ -1,11 +1,10 @@
 <a href='https://github.com/catppuccin'><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="80" align="right"/></a>
-<h1 align="left">Catppuccin for AniWorld</h1>
 
 <h2>Usage</h2>
 
 1. Install [Stylus](https://github.com/openstyles/stylus) extension on your browser. [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/)
 2. In the main manager interface on the extension, check the box `as Usercss`.
-3. Download and install the theme [here](https://github.com/DrWuzi/aniworld-theme/raw/main/CatppuccinAniworld.user.css).
+3. Download and install the theme.
 
 | Latte | Frappe | Macchiato | Mocha |
 |---|---|---|---|
