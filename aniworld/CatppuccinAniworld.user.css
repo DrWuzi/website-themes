@@ -205,6 +205,7 @@
             color: @text !important;
         }
 
+
         #wrapper {
             background: @base !important;
 
@@ -217,8 +218,11 @@
             }
 
             header {
+                @hueWinkelAusgang: hue(#495BB5);
+                @hueWinkelZiel: hue(@accent-color);
+                @hueDifferenz: @hueWinkelZiel - @hueWinkelAusgang;
                 .header-logo {
-                    filter: hue-rotate(240deg) saturate(300%);
+                    filter: hue-rotate(unit(@hueDifferenz, deg)) saturate(300%);
                 }
                 i,
                 strong {
@@ -426,6 +430,9 @@
                     border-radius: @small-border-radius !important;
                     &:hover {
                         background: @overlay0 !important;
+                    }
+                    a{
+                        color: @text !important;
                     }
                 }
             }
