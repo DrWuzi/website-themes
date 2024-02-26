@@ -7,3 +7,5 @@
 3. Download and install the theme.
 
 These themes using [catppuccin's](https://catppuccin.com/) pastel color [palettes](https://github.com/catppuccin/catppuccin#-palette).
+
+NOTE: Stay away from Stylish! Supposedly this sends your entire browser history to the developer! If I'm wrong, I'm sorry, but I won't risk it.
