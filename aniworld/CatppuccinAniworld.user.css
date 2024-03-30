@@ -4,7 +4,6 @@
 @version        1.0.0
 @description    Catppuccin theme for Aniworld
 @author         DrWuzi
-@updateURL      https://github.com/DrWuzi/website-themes/raw/main/aniworld/CatppuccinAniworld.user.css
 @license        GNU-V3.0
 
 @preprocessor less
@@ -132,7 +131,7 @@
 
 @-moz-document domain("aniworld.to") {
 
-
+    html,
     :root {
         #catppuccin(@flavor, @accentColor);
     }
@@ -170,6 +169,7 @@
         @small-border-radius: 8px;
         @big-border-radius: 8px;
 
+        background: @mantle !important;
 
 
         /* Vertikale Scrollbar */
@@ -222,7 +222,7 @@
                 @hueWinkelZiel: hue(@accent-color);
                 @hueDifferenz: @hueWinkelZiel - @hueWinkelAusgang;
                 .header-logo {
-                    filter: hue-rotate(unit(@hueDifferenz, deg)) saturate(300%);
+                    filter: hue-rotate(unit(@hueDifferenz, deg));
                 }
                 i,
                 strong {
@@ -276,9 +276,33 @@
                 display: block !important;
             }
 
+            .dd .fa-chevron-down {
+                transition: transform 0.3s;
+            }
+
+            .dd:hover .fa-chevron-down {
+                transform: rotate(180deg);
+            }
+
             @keyframes hideModal {
                 100% {
                     display: none;
+                }
+            }
+
+            .menuSearch i:hover {
+                animation: openMagnifier 3s ease-in-out infinite;
+            }
+
+            @keyframes openMagnifier {
+                0% {
+                    transform: rotate(0deg);
+                }
+                50% {
+                    transform: rotate(90deg);
+                }
+                100% {
+                    transform: rotate(0deg);
                 }
             }
 
@@ -431,7 +455,7 @@
                     &:hover {
                         background: @overlay0 !important;
                     }
-                    a{
+                    a {
                         color: @text !important;
                     }
                 }
@@ -442,6 +466,7 @@
 
 
             #footer {
+
                 footer {
                     h4 {
                         color: @accent-color !important;
@@ -450,6 +475,25 @@
                 min-height: 0;
                 .footer-container {
                     background: @mantle !important;
+                }
+            }
+
+            .searchContainerArea {
+                background: @surface0 !important;
+                input {
+                    background: @surface1 !important;
+                }
+            }
+
+            .liveNotificationBoxWrapper {
+                background: @surface0 !important;
+                .liveNotificationBoxIcon {
+                    background: @surface1 !important;
+                }
+                .button {
+                    background: none;
+                    border: 1px solid @accent-color !important;
+                    border-radius: @small-border-radius !important;
                 }
             }
         }
@@ -736,10 +780,10 @@
             .welcomeMessage {
                 background: none;
             }
-            ul li a{
+            ul li a {
                 border-color: @accent-color;
             }
-            .messageAlert{
+            .messageAlert {
                 background: @surface0;
                 border: 1px solid @accent-color;
                 border-radius: @small-border-radius;
@@ -747,66 +791,66 @@
         }
         .accountFeatures {
             background: @mantle;
-            .container{
+            .container {
                 padding-bottom: 100px;
             }
             .brandButtonSectionCenter a {
                 border-color: @accent-color;
-                &:hover{
+                &:hover {
                     background: @overlay0;
                 }
             }
         }
-        .fullBackgroundSize{
+        .fullBackgroundSize {
             background: none;
-            input{
-                border-color: @accent-color !important; 
+            input {
+                border-color: @accent-color !important;
             }
         }
-        .searchResults{
-            li a{
+        .searchResults {
+            li a {
                 background: @surface0 !important;
                 border-radius: @small-border-radius;
-                &:hover{
+                &:hover {
                     box-shadow: 0 1px 8px @accent-color;
                 }
             }
         }
-        .seriesWishListHeader{
+        .seriesWishListHeader {
             background: none;
-            .button.blue.small.right{
+            .button.blue.small.right {
                 background: none !important;
                 border: 1px solid @accent-color;
                 border-radius: @small-border-radius;
-                &:hover{
+                &:hover {
                     background: @overlay0 !important;
                 }
             }
         }
-        .calendar.row li{
-            a span{
+        .calendar.row li {
+            a span {
                 background: @surface0 !important;
                 border: none;
-                &:hover{
+                &:hover {
                     background: @overlay0 !important;
                 }
             }
-            &:first-child a span{
+            &:first-child a span {
                 border-top-left-radius: @small-border-radius;
                 border-bottom-left-radius: @small-border-radius;
             }
-            &:last-child a span{
+            &:last-child a span {
                 border-top-right-radius: @small-border-radius;
                 border-bottom-right-radius: @small-border-radius;
             }
-            &.now a span{
+            &.now a span {
                 background: @surface1 !important;
-                &:hover{
+                &:hover {
                     background: @overlay0 !important;
                 }
             }
         }
-        .calendarList>h3{
+        .calendarList > h3 {
             background: @surface0;
             border: none;
             border-bottom: 1px solid @accent-color
@@ -823,19 +867,19 @@
                     background: none;
                     border: 1px solid @accent-color;
                     border-radius: @small-border-radius;
-                    &:hover{
+                    &:hover {
                         background: @overlay0;
                     }
                 }
-                li.ui-tabs-active.ui-state-active a{
+                li.ui-tabs-active.ui-state-active a {
                     background: @base;
                     border: 1px solid @accent-color;
-                                        &:hover{
+                    &:hover {
                         background: @overlay0;
                     }
                 }
             }
-            .randomFormContent{
+            .randomFormContent {
                 background: none;
                 box-shadow: none;
             }
