@@ -1,0 +1,969 @@
+/* ==UserStyle==
+@name           AniWorld Catppuccin Reworked
+@namespace      https://github.com/DrWuzi/website-themes/new/main/aniworld
+@version        1.0.0
+@description    Catppuccin theme for Aniworld
+@author         DrWuzi
+@license        GNU-V3.0
+
+@preprocessor less
+@var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater*", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+
+// [default, min, max, step, units]
+@var range scrollbarWidth "Scrollbar Width" [12, 10, 20, 2, 'px']
+
+@var checkbox hideXXX "Hide XXX link" 1
+
+==/UserStyle== */
+@-moz-document domain("aniworld.to") {
+    :root {
+        #catppuccin(@flavor, @accentColor);
+    }
+
+    #catppuccin(@lookup, @accent) {
+        @text: @catppuccin[@@lookup][@text];
+        @subtext1: @catppuccin[@@lookup][@subtext1];
+        @subtext0: @catppuccin[@@lookup][@subtext0];
+        @overlay2: @catppuccin[@@lookup][@overlay2];
+        @overlay1: @catppuccin[@@lookup][@overlay1];
+        @overlay0: @catppuccin[@@lookup][@overlay0];
+        @surface2: @catppuccin[@@lookup][@surface2];
+        @surface1: @catppuccin[@@lookup][@surface1];
+        @surface0: @catppuccin[@@lookup][@surface0];
+        @base: @catppuccin[@@lookup][@base];
+        @mantle: @catppuccin[@@lookup][@mantle];
+        @crust: @catppuccin[@@lookup][@crust];
+        @accent-color: @catppuccin[@@lookup][@@accent]; // Border Radius Variables
+        @border-radius-small: 4px;
+        @border-radius-medium: 8px;
+        @border-radius-large: 12px; // Padding Variables
+        @padding-small: 8px;
+        @padding-medium: 16px;
+        @padding-large: 24px; // Shadow Variables
+        @shadow-small: 0 2px 4px rgba(0, 0, 0, 0.1);
+        @shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+        @shadow-large: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+        /* ============================= */
+        /*           MIXINS              */
+        /* ============================= */
+        .button() {
+            background-color: @base;
+            color: @text;
+
+            &:hover {
+                background-color: @overlay0;
+            }
+        } // Button Mixins
+        .button-basic() {
+            background-color: @base;
+            color: @text;
+            border: 1px solid @overlay0;
+            border-radius: @border-radius-medium;
+            cursor: pointer;
+            box-shadow: @shadow-small;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: @overlay1;
+            }
+        }
+        .button-invis() {
+            background-color: @base;
+            color: @text;
+            border-radius: @border-radius-medium;
+            cursor: pointer;
+            box-shadow: @shadow-small;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: @overlay1;
+            }
+        } // effect mixins
+        .zoom-effect(@scale: 1.2) {
+            display: inline-block; // Ensures the element respects the transform
+            transition: transform 0.3s ease; // Smooth transition
+            &:hover {
+                transform: scale(@scale); // Scale the element
+            }
+        }
+        .wiggle-effect() {
+            animation: wiggle 0.3s ease-in-out alternate;
+        }
+        .spin-swing-effect() {
+            display: inline-block; // Ensure the element respects the transform
+            transition: transform 0.3s ease; // Smooth transition
+            &:hover {
+                animation: spin-swing 1s ease-in-out; // Apply the animation on hover
+            }
+        } // border radius
+        .top-bottom-border-radius-list (@border-radius) {
+            &:first-child {
+                border-top-left-radius: @border-radius !important;
+                border-top-right-radius: @border-radius !important;
+            }
+            &:last-child {
+                border-bottom-left-radius: @border-radius !important;
+                border-bottom-right-radius: @border-radius !important;
+            }
+        }
+        /* ============================= */
+        /*         SCROLLBAR             */
+        /* ============================= */
+        @scrollbar-width: @scrollbarWidth;
+        /* Thumb */
+        @scrollbar-thumb-color: @accent-color;
+        @scrollbar-thumb-border-radius: 6px;
+        /* Track */
+        @scrollbar-track-color: rgba(@accent-color, 0.5);
+        @scrollbar-track-border-radius: 6px;
+
+        ::-webkit-scrollbar {
+            width: @scrollbar-width !important;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: @scrollbar-thumb-color !important;
+            border-radius: @scrollbar-thumb-border-radius !important;
+        }
+        ::-webkit-scrollbar-track {
+            background: @scrollbar-track-color !important;
+            border-radius: @scrollbar-track-border-radius !important;
+        }
+
+        /* ============================= */
+        /*           GLOBAL              */
+        /* ============================= */
+        * {
+            color: @text !important;
+            border-color: @accent-color !important;
+        }
+
+        background: @crust !important;
+        #wrapper {
+            background: @crust !important;
+        }
+
+        .modal {
+            transition: all .25s ease-in !important;
+        }
+        i,
+        .seriesListHorizontalContent p {
+            color: @accent-color !important;
+        }
+        a:hover {
+            color: @accent-color !important;
+            * {
+                color: @accent-color !important;
+            }
+        }
+        img {
+            border-radius: @border-radius-large !important;
+            transition: transform .7s cubic-bezier(0.14, 0.37, 0, 0.4) !important;
+        }
+        .modal {
+            border-radius: @border-radius-medium !important;
+        }
+        input{
+            border-radius: @border-radius-small !important;
+            background: @surface1 !important;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+        .fullBackgroundSize {
+            background: none;
+        }
+
+        /* ============================= */
+        /*         Header/Footer         */
+        /* ============================= */
+        .main-header {
+            background: @mantle !important;
+            & * {
+                background-color: @mantle !important;
+            }
+            .header-logo {
+                background-color: transparent !important;
+                @hueWinkelAusgang: hue(#495BB5);
+                @hueWinkelZiel: hue(@accent-color);
+                @hueDifferenz: @hueWinkelZiel - @hueWinkelAusgang;
+                filter: hue-rotate(unit(@hueDifferenz, deg));
+            }
+            .liveNewsFeedSection {
+                .liveNewsFeedContent li {
+                    background: @base !important;
+                    &:hover {
+                        background: @overlay0 !important;
+                        * {
+                            background: @overlay0 !important;
+                        }
+                    }
+                }
+                .liveNewsFeedSectionHeader,
+                .liveNewsFeedSectionHeader *,
+                > span a {
+                    background: @surface0 !important;
+                }
+                > span a {
+                    border-bottom-left-radius: @border-radius-medium !important;
+                    border-bottom-right-radius: @border-radius-medium !important;
+                }
+            }
+            h4 {
+                background: none !important;
+            }
+            .icon-menu span {
+                background: @accent-color !important;
+            }
+        }
+        .primary-navigation > ul > li {
+            &:hover {
+                > a {
+                    color: @accent-color !important;
+                }
+            }
+
+            &:last-child:hover {
+                strong {
+                    color: @accent-color !important;
+                }
+            }
+
+            ul > li {
+                background: @base !important;
+                .top-bottom-border-radius-list(@border-radius-medium);
+                a,
+                i {
+                    background: @base !important;
+                    transition: none !important;
+                }
+                &:hover {
+                    background: @overlay0 !important;
+                    > a {
+                        background: @overlay0 !important;
+                        > i {
+                            background: @overlay0 !important;
+                        }
+                    }
+                }
+            }
+        }
+        .modal {
+            border-radius: @border-radius-medium !important;
+            background: @base !important;
+            * {
+                background: @base !important;
+            }
+        } // footer
+        #footer *,
+        #footer {
+            background: @mantle;
+        } // style all buttons
+        .button {
+            .button-invis() !important;
+            border: none !important;
+        }
+        .blue {
+            border-color: @subtext0 !important;
+        }
+        .blue1 {
+            border-color: @surface2 !important;
+        }
+        .grey {
+            border-color: @overlay2 !important;
+        }
+
+        /* ============================= */
+        /*            Fixes              */
+        /* ============================= */
+        /* Show the modal when hovering over the dropdown */
+        .liveNewsFeed {
+            height: 61px;
+        }
+        .user.offset-navigation .dd:hover .modal,
+        .liveNewsFeed:hover .liveNewsFeedSection {
+            display: block !important;
+            /* Show .modal when either is hovered */
+        }
+        .modal {
+            ul li {
+                .top-bottom-border-radius-list(@border-radius-medium);
+                &:hover {
+                    background: @overlay0 !important;
+                    * {
+                        background: @overlay0 !important;
+                    }
+                }
+            }
+            &:before {
+                display: none !important;
+            }
+        }
+        .container {
+            padding-bottom: 200px !important;
+        }
+        .homeSliderView > div {
+            background: transparent !important;
+        }
+        .homeContentPromotionBoxPicture > img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            /* Make sure the image covers the container */
+            object-position: top;
+            /* Center the image */
+        }
+        .paragraph-end {
+            display: none !important;
+        }
+        @media only screen and (max-width: 992px) {
+            .carousel .previews {
+                height: 320px !important;
+            }
+        }
+        .searchContainerArea {
+            background: @base !important;
+            height: 60px;
+        }
+
+        /* ============================= */
+        /*            Homepage           */
+        /* ============================= */
+        /* ----- seriesList ----- */
+        .seriesListHorizontalCover,
+        .seriesListHorizontalContent {
+            border-radius: @border-radius-large !important;
+        } // animation for seriesContent
+        .seriesListHorizontalEffect {
+            display: block;
+            position: relative;
+            height: 225px !important;
+            width: 150px !important;
+
+            .seriesListHorizontalContent,
+            .seriesListHorizontalCover {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                @media only screen and (max-width: 992px) {
+                    margin-bottom: 0px !important;
+                }
+            }
+        }
+        .seriesListHorizontalContent {
+            i,
+            p {
+                background: none !important;
+            }
+            p {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+        .seriesListHorizontalEffect:hover {
+            .seriesListHorizontalCover img {
+                transform: scale(1.1);
+                /* Scale the image on hover */
+            }
+            .seriesListHorizontalContent {
+                opacity: 1;
+                /* Show content on hover */
+            }
+        }
+        /* ----- ----- ----- */
+        .catalogNav li {
+            .button-invis();
+            a {
+                color: @text !important;
+            }
+        } // remove background
+        .coverListNavigation * {
+            background: none;
+        } // remove box-shadow
+        .coverListNavigation * {
+            box-shadow: none;
+        }
+
+        /* ============================= */
+        /*         NextEpisodeList       */
+        /* ============================= */
+        .newEpisodeList {
+            background: @base !important;
+            border-radius: @border-radius-large !important;
+            .col-md-12:hover {
+                background: @overlay0 !important;
+                border-radius: @border-radius-small !important;
+            }
+        }
+
+        /* ============================= */
+        /*           AnimeNews           */
+        /* ============================= */
+        .animeNews .previews {
+            border-radius: @border-radius-medium !important;
+            .animNewsBox > div {
+                &:hover a {
+                    border-width: 6px;
+                    background: @overlay0 !important;
+                }
+            }
+        }
+
+        /* ============================= */
+        /*         AnimeCalendar         */
+        /* ============================= */
+        .tvSeriesCalendarNavigation {
+            background: @surface0 !important;
+            border-radius: @border-radius-large !important;
+            .col-lg-12 {
+                background: @surface0 !important;
+                border-radius: @border-radius-large !important;
+            }
+            .tvSeriesCalendarContent {
+                background: @base !important;
+                a > div > div {
+                    &:first-child {
+                        @media (min-width: 1200px) {
+                            width: 6.5% !important;
+                        }
+                    }
+
+                    &:last-child:hover {
+                        background: @overlay0 !important;
+                        border-radius: @border-radius-small !important;
+                    }
+                }
+            }
+            .ui-tabs-nav > li {
+                &.active {
+                    background: @surface1 !important;
+                }
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+            .tvSeriesCalendarNavItem {
+                background: transparent !important;
+                .zoom-effect(1.2);
+            }
+            span {
+                transition: all .25s ease-in !important;
+            }
+        }
+
+        /* ============================= */
+        /*         SupportFAQList        */
+        /* ============================= */
+        .homepageSupportFAQList {
+            border-radius: @border-radius-large !important;
+            background: @surface0 !important;
+            .row > div {
+                border-radius: @border-radius-medium !important;
+                background: @surface1 !important;
+                margin: 0 0 10px 0 !important;
+            }
+        }
+
+        /* ============================= */
+        /*           Shoutbox            */
+        /* ============================= */
+        .shoutbox {
+            bottom: 8px;
+            right: 8px;
+            box-shadow: none;
+            border-radius: @border-radius-large !important;
+            background: @surface0 !important;
+            #shoutboxMessage {
+                background: @surface0 !important;
+                border-radius: @border-radius-small !important;
+            }
+            .shoutboxIcons {
+                min-height: 50px;
+            }
+            .shoutboxHeader,
+            .shoutboxBodyForm {
+                background: @base !important;
+            }
+            .shoutboxHeader:hover {
+
+                background: @overlay0 !important;
+            }
+        }
+
+        /* ============================= */
+        /*           Series              */
+        /* ============================= */
+        #series {
+            .SeriesSection {
+                background: rgba(@crust, 0.5) !important;
+                display: flex;
+                height: auto;
+                .series-meta,
+                .container {
+                    display: inline-block;
+                    height: auto;
+                }
+                .series-add {
+                    li.buttonAction:hover {
+                        background: @overlay0 !important;
+                    }
+                    .setFavourite,
+                    .setWatchlist {
+                        i {
+                            color: @text !important;
+                        }
+                        
+                        &.true {
+                            background-color: fade(@accent-color, 15%);
+                            i {
+                                color: @accent-color !important;
+                            }
+                        }
+                    }
+                    .add-series-button {
+                        border-top-left-radius: @border-radius-medium !important;
+                        border-top-right-radius: @border-radius-medium !important;
+                        background: @surface0 !important;
+                    }
+                    .collections {
+                        border-bottom-left-radius: @border-radius-medium !important;
+                        border-bottom-right-radius: @border-radius-medium !important;
+                        background: @base !important;
+                        li:last-child {
+                            border-bottom-left-radius: @border-radius-medium !important;
+                            border-bottom-right-radius: @border-radius-medium !important;
+                        }
+                    }
+                    .starRatingResult {
+                        background: @base !important;
+                        * {
+                            background: @base !important;
+                        }
+                        span {
+                            color: @accent-color !important;
+                        }
+                    }
+                    .rating-control {
+                        &:before {
+                            background: @accent-color !important
+                        }
+                        .current-rating svg {
+                            .base {
+                                fill: @accent-color !important
+                            }
+                            .mouth,
+                            .right-eye,
+                            .left-eye {
+                                fill: @base !important
+                            }
+                        }
+                        .rating-option svg {
+                            .base {
+                                fill: @overlay0 !important
+                            }
+                            .mouth,
+                            .right-eye,
+                            .left-eye {
+                                fill: @base !important
+                            }
+                        }
+                    }
+                }
+                .container {
+                    padding: 0 !important;
+                }
+                .backdrop {
+                    height: 100%;
+                }
+                .seriesCoverBox {
+                    background: transparent !important;
+                }
+                @media only screen and (max-width: 992px) {
+                    .picture a {
+                        margin-left: 15px !important;
+                    }
+                }
+                @media only screen and (max-width: 740px) {
+                    .container {
+                        display: flex !important;
+                        flex-direction: column !important;
+                    }
+                    .picture {
+                        margin: 0 auto;
+                        img {
+                            width: 240px !important;
+                        }
+                        a {
+                            margin-left: 40px !important;
+                        }
+                    }
+                }
+            }
+            > section > div.container.row > div.series-add.col-md-3.col-sm-3.col-xs-12 > div > ul > li:nth-child(3) {
+                display: none !important;
+            }
+        }
+
+        /* ============================= */
+        /*      HosterSiteDirectNav      */
+        /* ============================= */
+        .hosterSiteDirectNav {
+            span,
+            a {
+                background: @surface0 !important;
+                color: @text !important;
+                * {
+                    color: @text !important;
+                }
+            }
+            a {
+                margin-left: 0 !important;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+            .active {
+                background: @accent-color !important;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+            .seen {
+                background: rgba(@accent-color, 0.5) !important;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+        }
+
+        /* ============================= */
+        /*         ContainsSeason        */
+        /* ============================= */
+        .hosterSectionTitle {
+            display: none !important;
+        }
+
+        .hosterSiteVideo {
+            background: none !important;
+            margin-top: 25px !important;
+
+
+            .inSiteWebStream {
+                background: none !important;
+                border-color: @accent-color !important;
+                border-radius: @border-radius-medium !important;
+                border-width: 5px !important;
+                border-style: solid !important;
+
+                small {
+                    display: none !important;
+                }
+                iframe {
+                    display: inherit !important;
+                }
+            }
+
+            .changeLanguageBox {
+                background: none !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .watchEpisode {
+                height: 100% !important;
+            }
+            .hosterSiteVideoButton {
+                display: none !important
+            }
+
+            .generateInlinePlayer {
+                background: transparent !important;
+            }
+        }
+
+        #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13) {
+            background: transparent !important;
+        }
+
+        /* ============================= */
+        /*       SeasonEpisodesList      */
+        /* ============================= */
+        .seasonEpisodesList {
+            border-radius: @border-radius-large !important;
+            .seen {
+                background: rgba(@accent-color, 0.5) !important;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+            > thead {
+                > tr > th {
+                    background: @surface0 !important;
+                }
+                > tr > th:first-child {
+                    border-top-left-radius: @border-radius-large !important;
+                }
+                > tr > th:last-child {
+                    border-top-right-radius: @border-radius-large !important;
+                }
+            }
+            > tbody {
+                tr {
+                    background: @surface0 !important;
+                    color: @text !important;
+                    .season1EpisodeID,
+                    .seasonEpisodeTitle {
+                        color: @text !important;
+                        * {
+                            color: @text !important;
+                        }
+                    }
+                    &:hover {
+                        background: @overlay0 !important;
+                        * {
+                            color: @accent-color !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > a {
+            display: none !important;
+        }
+
+        /* ============================= */
+        /*         SeasonListBig         */
+        /* ============================= */
+        .SeasonListBigPicture,
+        .SeasonListBigContent {
+            border-radius: @border-radius-large !important;
+
+            img {
+                border-radius: @border-radius-large !important;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* ============================= */
+        /*        LiveNotification       */
+        /* ============================= */
+        .liveNotificationBoxWrapper {
+            background: @surface0 !important;
+            .liveNotificationBoxIcon {
+                background: @surface1 !important;
+            }
+            .button {
+                background: none;
+                border: 1px solid @accent-color !important;
+                border-radius: @border-radius-small !important;
+            }
+        }
+        
+        /* ============================= */
+        /*            AnimePage          */
+        /* ============================= */
+        .seriesListNavigation {
+            background: none;
+            a {
+                border-color: @accent-color !important;
+            }
+        }
+        .seriesGenreList {
+            background: @surface0 !important;
+            border-radius: @border-radius-small;
+        }
+        .homeContentGenresList {
+            a, li>div {
+                .button-invis();
+            }
+        }
+        .allSeriesBox {
+            border-radius: @border-radius-medium;
+            background: @surface1 !important;
+            .preBox {
+                border-radius: @border-radius-medium;
+                background: @surface0 !important;
+            }
+        }
+        
+        /* ============================= */
+        /*          WelcomePage          */
+        /* ============================= */
+        .welcomePage {
+            .welcomeMessage {
+                background: none;
+            }
+            ul li a {
+                border-color: @accent-color;
+            }
+            .messageAlert {
+                background: @surface0;
+                border: 1px solid @accent-color;
+                border-radius: @border-radius-small;
+            }
+        }
+        .accountFeatures {
+            background: @mantle;
+            .container {
+                padding-bottom: 100px;
+            }
+            .brandButtonSectionCenter a {
+                border-color: @accent-color;
+                &:hover {
+                    background: @overlay0;
+                }
+            }
+        }
+        
+        /* ============================= */
+        /*           SearchPage          */
+        /* ============================= */
+        .searchResults {
+            li a {
+                background: @surface0 !important;
+                border-radius: @border-radius-medium;
+                &:hover {
+                    box-shadow: 0 1px 8px @accent-color;
+                }
+            }
+        }
+        
+        /* ============================= */
+        /*          Animekalender        */
+        /* ============================= */
+        .seriesWishListHeader {
+            background: none;
+            .button.blue.small.right {
+                background: none !important;
+                border: 1px solid @accent-color;
+                border-radius: @border-radius-small;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+        }
+        .calendar.row li {
+            a span {
+                background: @surface0 !important;
+                border: none;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+            &:first-child a span {
+                border-top-left-radius: @border-radius-small;
+                border-bottom-left-radius: @border-radius-small;
+            }
+            &:last-child a span {
+                border-top-right-radius: @border-radius-small;
+                border-bottom-right-radius: @border-radius-small;
+            }
+            &.now a span {
+                background: @surface1 !important;
+                &:hover {
+                    background: @overlay0 !important;
+                }
+            }
+        }
+        .calendarList > h3 {
+            background: @surface0;
+            border: none;
+            border-bottom: 1px solid @accent-color
+        }
+        .randomFormHeader {
+            background: none;
+        }
+        .randomForm {
+            background: @surface0;
+            border-radius: @border-radius-large;
+            .randomFormBackground {
+                background: none;
+                li a {
+                    background: none;
+                    border: 1px solid @accent-color;
+                    border-radius: @border-radius-small;
+                    &:hover {
+                        background: @overlay0;
+                    }
+                }
+                li.ui-tabs-active.ui-state-active a {
+                    background: @base;
+                    border: 1px solid @accent-color;
+                    &:hover {
+                        background: @overlay0;
+                    }
+                }
+            }
+            .randomFormContent {
+                background: none;
+                box-shadow: none;
+            }
+        }
+
+        /* ============================= */
+        /*           HideXXX             */
+        /* ============================= */
+        a[href="https://helloporn.com"] {
+            & when (@hideXXX =1) {
+                display: none !important;
+            }
+        }
+
+        /* ============================= */
+        /*           Animations          */
+        /* ============================= */
+        .coverListNavigation span {
+            .zoom-effect(1.2);
+        }
+
+        .seriesListHorizontalContent i {
+            .spin-swing-effect();
+        }
+
+        .liveNewsFeedButton i:hover {
+            .wiggle-effect();
+        }
+
+        /* ============================= */
+        /*            Keyframes          */
+        /* ============================= */
+        @keyframes spin-swing {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-15deg); // Slight spin to the left
+            }
+            50% {
+                transform: rotate(380deg); // Spin to the right
+            }
+            75% {
+                transform: rotate(340deg); // Swing back left a bit
+            }
+            100% {
+                transform: rotate(360deg); // Settle back to original position
+            }
+        }
+        @keyframes wiggle {
+            0% {
+                transform: rotate(-10deg);
+            }
+            33% {
+                transform: rotate(10deg);
+            }
+            66% {
+                transform: rotate(-10deg);
+            }
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+    }
+}
+
+/* prettier-ignore */
+@catppuccin:{@latte:{@rosewater:#dc8a78;@flamingo:#dd7878;@pink:#ea76cb;@mauve:#8839ef;@red:#d20f39;@maroon:#e64553;@peach:#fe640b;@yellow:#df8e1d;@green:#40a02b;@teal:#179299;@sky:#04a5e5;@sapphire:#209fb5;@blue:#1e66f5;@lavender:#7287fd;@text:#4c4f69;@subtext1:#5c5f77;@subtext0:#6c6f85;@overlay2:#7c7f93;@overlay1:#8c8fa1;@overlay0:#9ca0b0;@surface2:#acb0be;@surface1:#bcc0cc;@surface0:#ccd0da;@base:#eff1f5;@mantle:#e6e9ef;@crust:#dce0e8};@frappe:{@rosewater:#f2d5cf;@flamingo:#eebebe;@pink:#f4b8e4;@mauve:#ca9ee6;@red:#e78284;@maroon:#ea999c;@peach:#ef9f76;@yellow:#e5c890;@green:#a6d189;@teal:#81c8be;@sky:#99d1db;@sapphire:#85c1dc;@blue:#8caaee;@lavender:#babbf1;@text:#c6d0f5;@subtext1:#b5bfe2;@subtext0:#a5adce;@overlay2:#949cbb;@overlay1:#838ba7;@overlay0:#737994;@surface2:#626880;@surface1:#51576d;@surface0:#414559;@base:#303446;@mantle:#292c3c;@crust:#232634};@macchiato:{@rosewater:#f4dbd6;@flamingo:#f0c6c6;@pink:#f5bde6;@mauve:#c6a0f6;@red:#ed8796;@maroon:#ee99a0;@peach:#f5a97f;@yellow:#eed49f;@green:#a6da95;@teal:#8bd5ca;@sky:#91d7e3;@sapphire:#7dc4e4;@blue:#8aadf4;@lavender:#b7bdf8;@text:#cad3f5;@subtext1:#b8c0e0;@subtext0:#a5adcb;@overlay2:#939ab7;@overlay1:#8087a2;@overlay0:#6e738d;@surface2:#5b6078;@surface1:#494d64;@surface0:#363a4f;@base:#24273a;@mantle:#1e2030;@crust:#181926};@mocha:{@rosewater:#f5e0dc;@flamingo:#f2cdcd;@pink:#f5c2e7;@mauve:#cba6f7;@red:#f38ba8;@maroon:#eba0ac;@peach:#fab387;@yellow:#f9e2af;@green:#a6e3a1;@teal:#94e2d5;@sky:#89dceb;@sapphire:#74c7ec;@blue:#89b4fa;@lavender:#b4befe;@text:#cdd6f4;@subtext1:#bac2de;@subtext0:#a6adc8;@overlay2:#9399b2;@overlay1:#7f849c;@overlay0:#6c7086;@surface2:#585b70;@surface1:#45475a;@surface0:#313244;@base:#1e1e2e;@mantle:#181825;@crust:#11111b}};
