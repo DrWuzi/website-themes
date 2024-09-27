@@ -8,4 +8,7 @@
 
 These themes using [catppuccin's](https://catppuccin.com/) pastel color [palettes](https://github.com/catppuccin/catppuccin#-palette).
 
-NOTE: Stay away from Stylish! Supposedly this sends your entire browser history to the developer! If I'm wrong, I'm sorry, but I won't risk it.
+NOTE: Stay away from Stylish! Stylus is much better!
+
+Important Note
+This repository is intended for educational purposes only. I am in no way affiliated with or supportive of the creators of any associated pages or actions. The content here is meant solely for learning about CSS injection techniques. Please use this knowledge responsibly and ethically.
