@@ -5,6 +5,7 @@
 @description    Catppuccin theme for Aniworld
 @author         DrWuzi
 @license        GNU-V3.0
+@updateURL      https://github.com/DrWuzi/website-themes/raw/refs/heads/main/aniworld/CatppuccinAniworldRevanced.user.css
 
 @preprocessor less
 @var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
