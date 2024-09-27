@@ -10,6 +10,7 @@ These themes using [catppuccin's](https://catppuccin.com/) pastel color [palette
 
 NOTE: Stay away from Stylish! Stylus is much better!
 
+
 Important Note
 
 This repository is intended for educational purposes only. I am in no way affiliated with or supportive of the creators of any associated pages or actions. The content here is meant solely for learning about CSS injection techniques. Please use this knowledge responsibly and ethically.
