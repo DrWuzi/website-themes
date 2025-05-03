@@ -1,11 +1,10 @@
 /* ==UserStyle==
 @name           AniWorld Catppuccin Reworked
 @namespace      https://github.com/DrWuzi/website-themes/new/main/aniworld
-@version        1.0.0
+@version        1.0.1
 @description    Catppuccin theme for Aniworld
 @author         DrWuzi
 @license        GNU-V3.0
-@updateURL      https://github.com/DrWuzi/website-themes/raw/refs/heads/main/aniworld/CatppuccinAniworldRevanced.user.css
 
 @preprocessor less
 @var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
@@ -168,8 +167,6 @@
         input{
             border-radius: @border-radius-small !important;
             background: @surface1 !important;
-            padding-left: 10px !important;
-            padding-right: 10px !important;
         }
         .fullBackgroundSize {
             background: none;
@@ -687,6 +684,28 @@
         #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div:nth-child(13) {
             background: transparent !important;
         }
+        
+        #wrapper > div.seriesContentBox > div.container.marginBottom > div:nth-child(5) > div > div {
+            > div.normalDropdownButton {
+                background: @surface0 !important;
+                border-top-left-radius: @border-radius-medium !important;
+                border-top-right-radius: @border-radius-medium !important;
+            }
+            > div.normalDropdown {
+                border-bottom-left-radius: @border-radius-medium !important;
+                border-bottom-right-radius: @border-radius-medium !important;
+                span{
+                    background: @surface1 !important;
+                    &:hover {
+                        background: @surface2 !important;
+                    }
+                    &:last-child {
+                        border-bottom-left-radius: @border-radius-medium !important;
+                        border-bottom-right-radius: @border-radius-medium !important;
+                    }
+                }
+            }
+        }
 
         /* ============================= */
         /*       SeasonEpisodesList      */
@@ -832,6 +851,12 @@
                 }
             }
         }
+        .supportSearchForm, .searchForm{
+            input{
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }     
+        }
         
         /* ============================= */
         /*          Animekalender        */
@@ -911,6 +936,30 @@
         a[href="https://helloporn.com"] {
             & when (@hideXXX =1) {
                 display: none !important;
+            }
+        }
+        
+        /* ============================= */
+        /*            MAL-Sync           */
+        /* ============================= */
+        #malp{
+            #MalData {
+                background: none !important;
+                display: grid !important;
+            }
+            .malp-group{
+                border: @border-radius-medium !important;
+                background: @base !important;
+            }
+            .malp-group-field{
+                line-height: normal !important;
+            }
+            select{
+                background: @base !important;
+                padding-left: 5px !important;
+                option { 
+                    background: none !important;
+                }
             }
         }
 
