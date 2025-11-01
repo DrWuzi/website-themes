@@ -1,11 +1,10 @@
 /* ==UserStyle==
 @name           AniWorld Catppuccin
 @namespace      https://github.com/DrWuzi/website-themes/aniworld
-@version        1.0.1
+@version        1.0.2
 @description    Catppuccin theme for Aniworld
 @author         DrWuzi
 @license        GNU-V3.0
-@updateURL      https://github.com/DrWuzi/website-themes/raw/refs/heads/main/aniworld/CatppuccinAniworld.user.css
 
 @preprocessor less
 @var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
@@ -87,12 +86,11 @@
 
 
         * {
-
             &:hover {
                 transition: 0.5s ease-in-out;
             }
             color: @text !important;
-            border-color: none !important;
+            border-color: @accent-color !important;
         }
 
         strong,
@@ -398,11 +396,14 @@
             background: fadeout(@accent-color, 80%) !important;
             color: @text !important;
         } // /anime/stream/
-        #series .title {
+        #series .SeriesSection {
             background: @mantle !important;
             border-bottom: 1px solid @accent-color;
-            .backdrop {}
-
+            display: flex;
+            height: auto;
+            .backdrop {
+                height: 100%;
+            }
             .genres {
                 ul {
                     li {
@@ -829,6 +830,30 @@
         }
         .coverListNavigation span {
             .zoom-effect(1.2);
+        }
+        
+        /* ============================= */
+        /*            MAL-Sync           */
+        /* ============================= */
+        #malp{
+            #MalData {
+                background: none !important;
+                display: grid !important;
+            }
+            .malp-group{
+                border: @small-border-radius !important;
+                background: @mantle !important;
+            }
+            .malp-group-field{
+                line-height: normal !important;
+            }
+            select{
+                background: @mantle !important;
+                padding-left: 5px !important;
+                option { 
+                    background: none !important;
+                }
+            }
         }
         
         /* ============================= */
