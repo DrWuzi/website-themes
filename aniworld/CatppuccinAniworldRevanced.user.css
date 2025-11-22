@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           AniWorld Catppuccin Reworked
 @namespace      https://github.com/DrWuzi/website-themes/new/main/aniworld
-@version        1.0.1
+@version        1.0.2
 @description    Catppuccin theme for Aniworld
 @author         DrWuzi
 @license        GNU-V3.0
@@ -929,6 +929,65 @@
                 box-shadow: none;
             }
         }
+        
+        /* ============================= */
+        /*        userDetailFriends      */
+        /* ============================= */
+        .userDetailFriends{
+            background: @base !important;
+            border-radius: @border-radius-medium;
+            
+            .displayMoreFriends{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: None !important;
+                border: 1px solid @accent-color;
+                border-radius: @border-radius-medium;
+                
+                &:hover {
+                    background: @surface1 !important;
+                }
+            }
+            
+            .col-lg-12 {
+                display: flex;        // makes it a flex container
+                flex-wrap: wrap;      // optional: wrap children if needed
+                gap: 10px;
+                .col-md-1 {
+                  a {
+                    display: flex;
+                    flex-direction: column; // stack image + name vertically
+                    align-items: center;    // center children horizontally
+                    text-align: center;     // center text
+
+
+                    .col-lg-12 {
+                      &:first-child {
+                        img {
+                          display: block;
+                          margin: 0 auto;   // center image
+                          border-radius: 50%; // optional: make it round
+                        }
+                      }
+
+                      &:last-child {
+                        h5 {
+                          width: 100%;
+                          overflow: hidden;       // hide overflowing text
+                          white-space: nowrap;    // single line
+                          text-overflow: ellipsis; // show "..."
+                          margin-top: 8px;       // spacing from image
+                          text-align: center;    // center the text
+                          cursor: default;
+                        }
+                      }
+                    }
+                  }
+                }
+            }
+         }
+        
 
         /* ============================= */
         /*           HideXXX             */
